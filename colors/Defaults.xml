@@ -1,0 +1,31 @@
+<colors>
+	
+	<!--Generic Colors-->
+	
+	<color name="Black">FF000000</color>
+	<color name="Red">FFFF0000</color>
+	<color name="Blue">FF2BB6EA</color>
+	<color name="Green">FF00FF00</color>
+	<color name="White">FFFFFFFF</color>
+	<color name="White_60">60FFFFFF</color>
+	<color name="White_30">30FFFFFF</color>
+	<color name="White_10">10FFFFFF</color>
+	<color name="White_5">5FFFFFF</color>
+
+	<!--Unified Theme Colors-->
+
+	<color name="Color-Accent-Primary">FF0078D7</color>
+	<color name="Color-Accent-Secondary">FF006DC4</color>
+
+	<color name="Color-Dark-Primary">FF1F1F1F</color>
+	<color name="Color-Dark-Secondary">FF2B2B2B</color>
+	<color name="Color-Dark-Tertiary">FF404040</color>
+
+	<color name="Color-Light-Primary">FFF1F1F1</color>
+	<color name="Color-Light-Secondary">FFE4E4E4</color>
+	<color name="Color-Light-Tertiary">FFC8C8C8</color>
+
+	<color name="Color-Overlay-Primary">DD000000</color>
+	<color name="Color-Overlay-Secondary">AA000000</color>
+
+</colors>

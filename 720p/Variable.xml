@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+
+	<!--Accent Color Variables-->
+
+	<variable name="Color-Accent-Primary">
+		<value condition="SubString(Container.FolderPath,plugin://plugin.video.youtube,left">FFE62D28</value>
+		<value condition="SubString(Container.FolderPath,plugin://plugin.video.twitch,left">FF624397</value>
+		<value>Color-Accent-Primary</value>
+	</variable>
+
+	<variable name="Color-Accent-Secondary">
+		<value condition="SubString(Container.FolderPath,plugin://plugin.video.youtube,left">FFCF2420</value>
+		<value condition="SubString(Container.FolderPath,plugin://plugin.video.twitch,left">FF533A82</value>
+		<value>Color-Accent-Secondary</value>
+	</variable>
+
+</includes>

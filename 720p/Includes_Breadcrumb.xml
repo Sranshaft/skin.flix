@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+
+	<include name="Common-Breadcrumb">
+	
+		<!--Breadcrumb : Bar-->
+		<control type="group">
+		
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>60</height>
+
+			<include>Common-Animation-Breadcrumb</include>
+
+			<!--Breadcrumb : Background-->
+			<control type="image">
+
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>60</height>
+				<texture colordiffuse="Color-Dark-Primary">colors/color_white.png</texture>
+
+			</control>
+
+			<!--Breadcrumb : Labels-->
+			<control type="grouplist">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>60</height>
+				<orientation>horizontal</orientation>
+				<itemgap>10</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+
+				<!--Breadcrumb : Kodi Logo-->
+				<control type="group">
+
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>60</width>
+					<height>60</height>
+
+					<visible>Window.IsActive(home)</visible>
+
+					<control type="image">
+						
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>60</width>
+						<height>60</height>
+						<texture colordiffuse="Color-Dark-Secondary">colors/color_white.png</texture>
+						<aspectratio>keep</aspectratio>
+						
+					</control>
+
+					<control type="image">
+
+						<posx>15</posx>
+						<posy>15</posy>								
+						<width>30</width>
+						<height>30</height>
+						<texture colordiffuse="$VAR[Color-Accent-Primary]">home/home_logo_image.png</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+
+					</control>
+
+				</control>	
+
+				<control type="image">
+					
+					<posx>-6</posx>	
+					<posy>15</posy>			
+					<width>200</width>
+					<height>30</height>
+					<texture>home/home_logo_text.png</texture>
+					<aspectratio align="left" aligny="center">keep</aspectratio>
+
+					<visible>Window.IsActive(home)</visible>
+					
+				</control>
+
+				<!--Breadcrumb : Back Button-->
+				<control type="button">
+					
+					<include>Common-Breadcrumb-Button</include>
+					<label></label>
+					<onclick>back</onclick>
+					
+					<visible>!Window.IsActive(home)</visible>
+
+				</control>
+				
+				<!--Breadcrumb : Window Header-->
+				<control type="label">
+					
+					<width min="0" max="600">auto</width>
+					<height>60</height>
+					<label>$VAR[Breadcrumb-Header]</label>
+					<font>Font-Header</font>
+					<textcolor>$VAR[Color-Accent-Primary]</textcolor>
+					<aligny>center</aligny>
+
+					<visible>!Window.IsActive(home)</visible>
+
+				</control>
+				
+				<!--Breadcrumb : Window Subheader-->
+				<control type="label">
+					
+					<posy>-1</posy>
+					<width min="0" max="600">auto</width>
+					<height>60</height>
+					<label>$VAR[Breadcrumb-SubHeader]</label>
+					<font>Font-Subheader</font>
+					<textcolor>Color-Light-Primary</textcolor>
+					<aligny>center</aligny>
+
+					<visible>!Window.IsActive(home)</visible>
+
+				</control>
+				
+			</control>
+
+			<!--Clock / System Tray-->
+			<control type="grouplist">
+			
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>60</height>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+
+				<!--Button : DVD-->
+				<control type="button">
+					
+					<include>Common-Breadcrumb-Button</include>
+					<label></label>
+					<onclick>EjectTray()</onclick>
+
+					<visible>System.HasMediadvd</visible>
+					
+				</control>
+
+				<!--Button : Alarm-->
+				<control type="button">
+					
+					<include>Common-Breadcrumb-Button</include>
+					<label></label>
+					<onclick>CancelAlarm(ShutdownTimer)</onclick>
+
+					<visible>System.HasAlarm(ShutdownTimer)</visible>
+					
+				</control>
+
+				<!--Button : Pause-->
+				<control type="button">
+					
+					<include>Common-Breadcrumb-Button</include>
+					<label></label>
+					<onclick>Action(play)</onclick>
+
+					<visible>Player.HasMedia + Player.Paused</visible>
+					
+				</control>
+
+				<!--Button : Play-->
+				<control type="button">
+					
+					<include>Common-Breadcrumb-Button</include>
+					<label></label>
+					<onclick>Action(pause)</onclick>
+
+					<visible>Player.HasMedia + Player.Playing</visible>
+					
+				</control>
+
+				<!--Button : Scanning-->
+				<control type="button">
+					
+					<include>Common-Breadcrumb-Button</include>
+					<label></label>
+					
+					<visible>Library.IsScanningMusic | Library.IsScanningVideo</visible>
+
+				</control>
+
+				<!--Button : Power-->
+				<control type="button">
+					
+					<include>Common-Breadcrumb-Button</include>
+					<label></label>
+					<onclick>ActivateWindow(shutdownmenu)</onclick>
+
+				</control>
+
+				<control type="image">
+
+					<width>10</width>
+					<height>60</height>
+
+				</control>
+
+				<!--Clock : Time-->
+				<control type="label">
+					
+					<posy>-1</posy>
+					<width min="60" max="400">auto</width>
+					<height>60</height>
+					<label>$INFO[System.Time(hh:mm)]</label>
+					<font>Font-Subheader</font>
+					<textcolor>Color-Light-Primary</textcolor>
+					<aligny>center</aligny>
+
+				</control>
+				
+				<!--Clock : AM/PM-->
+				<control type="label">
+					
+					<width>56</width>
+					<height>60</height>
+					<label>$INFO[System.Time(xx)]</label>
+					<font>Font-Header</font>
+					<textcolor>$VAR[Color-Accent-Primary]</textcolor>
+					<aligny>center</aligny>
+
+				</control>
+
+				<!--Button : Clock-->
+				<control type="button">
+					
+					<include>Common-Breadcrumb-Button</include>
+					<label></label>
+					
+				</control>
+				
+			</control>
+
+		</control>
+	
+	</include>
+
+	<!--Common Includes-->
+
+	<include name="Common-Breadcrumb-Button">
+
+		<width>60</width>
+		<height>60</height>
+		<texturefocus colordiffuse="Color-Dark-Secondary">colors/color_white.png</texturefocus>
+		<texturenofocus colordiffuse="Color-Dark-Primary">colors/color_white.png</texturenofocus>
+		<font>Font-Symbol-Button</font>
+		<textcolor>Color-Light-Primary</textcolor>
+		<focusedcolor>Color-Light-Primary</focusedcolor>
+		<textoffsetx>0</textoffsetx>
+		<textoffsety>0</textoffsety>
+		<align>center</align>
+		<aligny>center</aligny>
+
+	</include>
+
+</includes>

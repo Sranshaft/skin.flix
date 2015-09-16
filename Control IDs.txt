@@ -1,0 +1,256 @@
+Colors :
+
+Color-Accent
+
+	For use when highlighting a selection
+
+Color-Dark-Primary
+Color-Dark-Secondary
+Color-Dark-Tertiary
+
+	For use with media related windows
+
+Color-Overlay-Primary
+Color-Light-Overlay
+
+	For use with overlaying information on top of images
+
+Color-Light-Primary
+Color-Light-Secondary
+Color-Light-Tertiary
+
+	For use with information and settings windows
+
+
+Fonts :
+
+Font-Header - 30px Uppercase Segoe UI Bold
+Font-Subheader - 30px Uppercase Segoe UI Semilight
+
+	For use with the breadcrumb bar
+
+Font-Title - 30px Uppercase Segoe UI Semibold
+Font-Subtitle - 26px Uppercase Segoe UI Semilight
+
+	For use with the navigation bar
+
+Font-Spotlight - 36px Uppercase Segoe UI Black
+Font-Base - 24px Uppercase Segoe UI Semibold
+Font-Body - 20px Segoe UI Semilight
+Font-Caption - 18px Segoe UI Bold
+Font-Caption-Black - 18px Segoe UI Black
+
+	For use with views / information
+
+Font-Symbol
+Font-Button-Symbol
+
+	For use with buttons that need icons
+
+
+Information :
+
+Breadcrumb-Header
+Breadcrumb-SubHeader
+
+View-Item-Base
+View-Item-Body
+View-Item-Caption
+View-Item-Badge
+View-Item-Poster
+View-Item-Thumb
+
+NowPlaying-Label-Primary
+NowPlaying-Label-Secondary
+NowPlaying-Label-Tertiary
+NowPlaying-Thumbnail
+
+Dimensions :
+
+Breadcrumb-Bar - x:0 ; y:0 ; width:1280 ; height:60
+Navigation-Bar - x:0 ; y:60 ; width:1280 ; width:60
+Content-Area - x:0 ; y:100 ; width:1280 ; width:600
+
+Content should be 70px from the left to align with the navigation bar's text.
+
+Buttons (icon only) - width:60 ; y:60
+Buttons (with text) - width:300 ; y:60
+
+Margins between items - 20px
+
+Custom Window IDs:
+
+	Custom_Home_Featured - ID:1100
+	Custom_Home_OnDeck - ID:1101
+	Custom_Home_RecentlyAdded - ID:1102
+
+	Custom_Hub_Movies.xml - ID:1110
+	Custom_Hub_TV.xml - ID:1111
+	Custom_Hub_LiveTV.xml - ID:1112
+	Custom_Hub_Music.xml - ID:1113
+	
+	Custom_InProgress_Episodes - ID:1120
+	Custom_InProgress_Movies - ID:1121
+
+	Custom_Splash - ID:1150
+
+Control IDs :
+
+	Window : Home.xml
+
+		Grouplist - ID:6000
+		
+		Button : Explore - ID:6001
+			
+			List - ID:6010
+			Panel - ID: 6010
+			Scrollbar - ID: 6015
+
+		Button : Featured - ID:6002
+
+			Panel - ID:6020
+
+		Button : On Deck - ID:6003	
+
+			Panel - ID:6030
+
+		Button : Recently Added - ID:6004
+
+			Panel - ID:6040
+			Scrollbar - ID:6045
+
+		Button : Search - ID:6005
+
+			Button - ID:6050
+
+		Button : Manage - ID:6006
+
+			Panel - ID:6050
+			Panel - ID:6051
+
+		Button : Favourites - ID:6007
+
+			Panel - ID:6070
+			Scrollbar - ID:6075
+
+		Button : Now Playing - ID:6008
+
+	Hub : Includes_Hub.xml
+
+		Grouplist - ID:6100
+
+		Button : Main - ID:6101
+
+			List - ID:6110
+			Scrollbar - ID:6115
+
+		Button : Featured - ID:6102
+
+			Panel - ID:6120
+
+		Button : Recently Added - ID:6103
+
+			Panel - ID:6130
+			Scrollbar - ID:6135
+
+		Button : Airing Today - ID:6104
+
+			Button - ID:6140
+
+		Button : Nearby Events - ID:6105
+
+			Panel - ID:6150
+			Scrollbar - ID:6155
+
+		Button : In Cinemas - ID:6106
+
+			Panel - ID:6160
+
+		Button : History - ID:6107
+
+			Panel - ID:6170
+			Scrollbar - ID:6175
+
+		Button : Trakt.TV - ID:6108
+
+			Panel - ID:6180
+			Panel - ID:6181
+
+	DialogVideoInfo.xml
+
+		Grouplist - ID:6500
+
+		Button : Overview - ID:6501
+
+			Textbox - ID:6510
+			Button - ID:6511
+			Scrollbar - ID:6515
+
+		Button : Actors - ID:6502
+
+			Panel - ID:50
+
+		Button : Details - ID:6503
+			
+	Navigation Bar - x:0 ; y:60 ; width:1280 ; height:60
+
+		Grouplist - 7000
+		Button - 7001
+		Label - 7002
+		Label - 7003
+
+	Navigation Menu - x:0 ; y:120 ; width:300 ; height:580
+
+		Grouplist - 7050
+
+		Label - 7050-7100
+
+		Button : Movies - 7100-7149
+		Button : TV Shows - 7150-7199
+		Button : Music - 7200-7249
+		Button : Addons - 7250-7299
+		Button : DialogVideoInfo - 7300-7349
+		Button : Youtube - 7850-7899
+
+	Command Bar - x:0 ; y:60 ; width:1280 ; height:60
+		
+		Grouplist - 8000
+		Button - 8001
+		Button - 8002
+		Button - 8003
+		Button - 8004
+
+	Command Menu - x:1280 ; y:120 ; width:300 ; height:580
+
+		Grouplist - 8050
+
+		Label - 8051-8099
+
+		Button : AddonBrowser - 8100-8149
+		Button : MyGames - 8150-8199
+		Button : MyMusicNav - 8200-8249
+		Button : MyMusicPlaylist - 8250-8299
+		Button : MyMusicSongs - 8300-8349
+		Button : MyPics - 8350-8399
+		Button : MyPrograms - 8400-8449
+		Button : MyVideoNav - 8450-8499
+		Button : MyVideoPlaylist - 8500-8549
+		Button : MyWeather - 8550-8599
+
+		Button : Views - 8900-8949
+
+			View : List - ID:8900
+			View : Poster - ID:8901
+			View : Thumbnail - ID:8902
+			View : Extended-Episode - ID:8903
+			View : Extended-Thumbnail - ID:8904
+			View : Extended-Square - ID:8905
+			View : Square - ID:8906
+			View : Grid-Poster - ID:8907
+			View : Grid-Thumbnail - ID:8908
+			View : Tall - ID:8909
+			View : Detail - ID:8910
+			View : Banner - ID:8911
+
+		Scrollbar - 8950
+

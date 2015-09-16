@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fonts>
+
+	<fontset id="default">
+
+		<!--Unified Theme Fonts-->
+
+		<font>
+			<name>Font-Spotlight</name>
+			<filename>SegoeUI-Black.ttf</filename>
+			<size>36</size>
+			<linespacing>0.65</linespacing>
+		</font>
+
+		<font>
+			<name>Font-Header</name>
+			<filename>SegoeUI-Bold.ttf</filename>
+			<size>30</size>
+		</font>
+
+		<font>
+			<name>Font-Subheader</name>
+			<filename>SegoeUI-Semilight.ttf</filename>
+			<size>30</size>
+		</font>
+
+		<font>
+			<name>Font-Title</name>
+			<filename>SegoeUI-Semibold.ttf</filename>
+			<size>30</size>
+		</font>
+
+		<font>
+			<name>Font-Subtitle</name>
+			<filename>SegoeUI-Semilight.ttf</filename>
+			<size>26</size>
+		</font>
+
+		<font>
+			<name>Font-Base</name>
+			<filename>SegoeUI-SemiBold.ttf</filename>
+			<size>24</size>
+			<linespacing>0.75</linespacing>
+		</font>
+
+		<font>
+			<name>Font-Body</name>
+			<filename>SegoeUI.ttf</filename>
+			<size>20</size>
+			<linespacing>0.95</linespacing>
+		</font>
+
+		<font>
+			<name>Font-Caption</name>
+			<filename>SegoeUI-Semibold.ttf</filename>
+			<size>18</size>
+			<linespacing>0.65</linespacing>
+		</font>
+
+		<font>
+			<name>Font-Caption-Black</name>
+			<filename>SegoeUI-Black.ttf</filename>
+			<size>18</size>
+			<linespacing>0.75</linespacing>
+		</font>
+
+		<font>
+			<name>Font-Symbol</name>
+			<filename>SegoeUI-Symbol.ttf</filename>
+			<size>20</size>
+		</font>
+
+		<font>
+			<name>Font-Symbol-Button</name>
+			<filename>materialdesignicons-webfont.ttf</filename>
+			<size>36</size>
+		</font>
+
+		<!--Generic Fonts-->
+		
+		<font>
+			<name>Large</name>
+			<filename>SegoeWP-Bold.ttf</filename>
+			<size>300</size>
+		</font>
+		
+		<font>
+			<name>Medium</name>
+			<filename>Arial.ttf</filename>
+			<size>26</size>
+		</font>
+		
+		<font>
+			<name>Small</name>
+			<filename>Arial.ttf</filename>
+			<size>20</size>
+		</font>
+
+		<!-- Required for system -->
+		<font>
+			<name>font13</name>
+			<filename>Arial.ttf</filename>
+			<size>20</size>
+		</font>
+		
+	</fontset>
+	
+</fonts>

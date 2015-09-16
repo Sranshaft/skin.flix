@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="0">
+
+	<defaultcontrol>5050</defaultcontrol>
+	<allowoverlay>true</allowoverlay>
+
+	<onload>AlarmClock(FocusInProgress,SetFocus,00:01,silent,loop)</onload>
+	<onload>AlarmClock(MoveInProgress,Control.Move(5050,1),00:20,silent,loop)</onload>
+
+	<controls>
+
+		<control type="group">
+
+			<left>0</left>
+			<right>0</right>
+			<top>0</top>
+			<bottom>0</bottom>
+
+			<!-- <include>Common-Breadcrumb</include> -->
+
+			<control type="group" id="5000">
+
+				<left>0</left>
+				<right>0</right>
+				<top>0</top>
+				<height>430</height>
+
+				<control type="wraplist" id="5050">
+
+					<left>350</left>
+					<right>0</right>
+					<top>0</top>
+					<bottom>0</bottom>
+					<viewtype label="535">panel</viewtype>
+					<scrolltime tween="cubic" easing="inout">400</scrolltime>
+					<orientation>horizontal</orientation>
+					<preloaditems>2</preloaditems>
+					<focusposition>1</focusposition>
+					<ondown>6050</ondown>
+
+					<visible allowhiddenfocus="true">false</visible>
+
+					<itemlayout width="930" height="430">
+
+					</itemlayout>
+
+					<focusedlayout width="930" height="430">
+
+					</focusedlayout>
+
+					<content target="video">special://skin/playlists/In Progress (Movies).xsp</content>
+
+				</control>
+
+				<control type="image">
+
+					<left>350</left>
+					<right>0</right>
+					<top>0</top>
+					<bottom>0</bottom>
+					<texture align="center" aligny="top" background="true">$INFO[Container(5050).ListItem.Art(fanart)]</texture>
+					<aspectratio align="center" aligny="top">scale</aspectratio>
+					<fadetime>400</fadetime>
+
+				</control>
+
+				<control type="image">
+
+					<left>0</left>
+					<right>0</right>
+					<top>0</top>
+					<bottom>-1</bottom>
+					<texture>background/background_shadowbox.png</texture>
+					
+				</control>
+
+				<control type="grouplist">
+
+					<left>95</left>
+					<width>490</width>
+					<top>50</top>
+					<bottom>0</bottom>
+					<orientation>vertical</orientation>
+					<aligny>top</aligny>
+					<itemgap>16</itemgap>
+					<usecontrolcoords>true</usecontrolcoords>
+
+					<control type="textbox">
+
+						<left>0</left>
+						<right>0</right>
+						<height min="0" max="200">auto</height>
+						<label>$INFO[Container(5050).ListItem.Title]</label>
+						<font>Font-Spotlight</font>
+						<textcolor>Color-Light-Primary</textcolor>
+
+					</control>
+
+					<control type="grouplist">
+
+						<left>0</left>
+						<top>-10</top>
+						<width>490</width>
+						<height>24</height>
+						<orientation>horizontal</orientation>
+						<itemgap>10</itemgap>
+						<usecontrolcoords>true</usecontrolcoords>
+
+						<control type="image">
+
+							<top>4</top>
+							<width>100</width>
+							<height>20</height>
+							<texture background="true" colordiffuse="Color-Accent-Primary">rating4.png</texture>
+							<aspectratio align="right">scale</aspectratio>
+							
+						</control>
+						
+						<control type="label">
+
+							<width min="0" max="200">auto</width>
+							<height>24</height>
+							<label>$INFO[Container(5050).ListItem.Rating]</label>
+							<font>Font-Caption</font>
+							<textcolor>Color-Light-Tertiary</textcolor>
+
+						</control>
+
+						<control type="label">
+
+							<width min="0" max="200">auto</width>
+							<height>24</height>
+							<label>$INFO[Container(5050).ListItem.MPAA]</label>
+							<font>Font-Caption</font>
+							<textcolor>Color-Light-Tertiary</textcolor>
+
+						</control>
+
+						<control type="label">
+
+							<width min="0" max="200">auto</width>
+							<height>24</height>
+							<label>$INFO[Container(5050).ListItem.Duration,, minutes]</label>
+							<font>Font-Caption</font>
+							<textcolor>Color-Light-Tertiary</textcolor>
+
+						</control>
+
+					</control>
+
+					<control type="textbox">
+
+						<left>0</left>
+						<right>0</right>
+						<height min="0" max="135">auto</height>
+						<label>$INFO[Container(5050).ListItem.Plot]</label>
+						<font>Font-Body</font>
+						<textcolor>Color-Light-Tertiary</textcolor>
+
+					</control>
+				
+				</control>
+
+			</control>
+
+			<control type="grouplist">
+
+				<left>0</left>
+				<right>0</right>
+				<top>400</top>
+				<bottom>0</bottom>
+				<orientation>vertical</orientation>
+				<scrolltime tween="cubic" easing="inout">400</scrolltime>
+				<itemgap>10</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+
+				<control type="group" id="6000">
+
+					<left>0</left>
+					<right>0</right>
+					<top>0</top>
+					<height>320</height>
+
+					<animation effect="fade" time="400" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6050)">Conditional</animation>
+
+					<control type="label" id="6010">
+
+						<left>95</left>
+						<right>0</right>
+						<top>0</top>
+						<height>24</height>
+						<label>Random movies</label>
+						<font>Font-Base</font>
+						<textcolor>Color-Light-Primary</textcolor>
+
+					</control>	
+
+					<control type="wraplist" id="6050">
+
+						<left>-155</left>
+						<right>0</right>
+						<top>40</top>
+						<height>130</height>
+						<viewtype label="535">panel</viewtype>
+						<scrolltime tween="cubic" easing="inout">400</scrolltime>
+						<orientation>horizontal</orientation>
+						<preloaditems>2</preloaditems>
+						<focusposition>1</focusposition>
+						<onup>5050</onup>
+						<ondown>6150</ondown>
+
+						<itemlayout width="250" height="130">
+
+							<control type="image">
+
+								<left>5</left>
+								<right>5</right>
+								<top>0</top>
+								<bottom>0</bottom>
+								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+
+							</control>
+
+						</itemlayout>
+
+						<focusedlayout width="250" height="130">
+
+							<control type="image">
+
+								<left>5</left>
+								<right>5</right>
+								<top>0</top>
+								<bottom>0</bottom>
+								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+
+							</control>
+
+						</focusedlayout>
+
+						 <content target="video">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</content>
+
+					</control>
+
+				</control>
+
+				<control type="group" id="6100">
+
+					<left>0</left>
+					<right>0</right>
+					<top>-150</top>
+					<height>320</height>
+
+					<animation effect="fade" time="400" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6150)">Conditional</animation>
+
+					<control type="label" id="6110">
+
+						<left>95</left>
+						<right>0</right>
+						<top>0</top>
+						<height>24</height>
+						<label>Recent movies</label>
+						<font>Font-Base</font>
+						<textcolor>Color-Light-Primary</textcolor>
+
+					</control>	
+
+					<control type="wraplist" id="6150">
+
+						<left>-155</left>
+						<right>0</right>
+						<top>40</top>
+						<height>130</height>
+						<viewtype label="535">panel</viewtype>
+						<scrolltime tween="cubic" easing="inout">400</scrolltime>
+						<orientation>horizontal</orientation>
+						<preloaditems>2</preloaditems>
+						<focusposition>1</focusposition>
+						<onup>6050</onup>
+						<ondown>6250</ondown>
+
+						<itemlayout width="250" height="130">
+
+							<control type="image">
+
+								<left>5</left>
+								<right>5</right>
+								<top>0</top>
+								<bottom>0</bottom>
+								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+
+							</control>
+
+						</itemlayout>
+
+						<focusedlayout width="250" height="130">
+
+							<control type="image">
+
+								<left>5</left>
+								<right>5</right>
+								<top>0</top>
+								<bottom>0</bottom>
+								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+
+							</control>
+
+						</focusedlayout>
+
+						 <content target="video">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</content>
+
+					</control>
+
+				</control>
+
+				<control type="group" id="6200">
+
+					<left>0</left>
+					<right>0</right>
+					<top>-150</top>
+					<height>320</height>
+
+					<animation effect="fade" time="400" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6250)">Conditional</animation>
+
+					<control type="label" id="6210">
+
+						<left>95</left>
+						<right>0</right>
+						<top>0</top>
+						<height>24</height>
+						<label>These movies have been recommended...</label>
+						<font>Font-Base</font>
+						<textcolor>Color-Light-Primary</textcolor>
+
+					</control>	
+
+					<control type="wraplist" id="6250">
+
+						<left>-155</left>
+						<right>0</right>
+						<top>40</top>
+						<height>130</height>
+						<viewtype label="535">panel</viewtype>
+						<scrolltime tween="cubic" easing="inout">400</scrolltime>
+						<orientation>horizontal</orientation>
+						<preloaditems>2</preloaditems>
+						<focusposition>1</focusposition>
+						<onup>6150</onup>
+						<ondown>6350</ondown>
+
+						<itemlayout width="250" height="130">
+
+							<control type="image">
+
+								<left>5</left>
+								<right>5</right>
+								<top>0</top>
+								<bottom>0</bottom>
+								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+
+							</control>
+
+						</itemlayout>
+
+						<focusedlayout width="250" height="130">
+
+							<control type="image">
+
+								<left>5</left>
+								<right>5</right>
+								<top>0</top>
+								<bottom>0</bottom>
+								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+
+							</control>
+
+						</focusedlayout>
+
+						 <content target="video">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</content>
+
+					</control>
+
+				</control>
+
+				<control type="group" id="6300">
+
+					<left>0</left>
+					<right>0</right>
+					<top>-150</top>
+					<height>320</height>
+
+					<animation effect="fade" time="400" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6350)">Conditional</animation>
+
+					<control type="label" id="6310">
+
+						<left>95</left>
+						<right>0</right>
+						<top>0</top>
+						<height>24</height>
+						<label>These movies have been recommended...</label>
+						<font>Font-Base</font>
+						<textcolor>Color-Light-Primary</textcolor>
+
+					</control>	
+
+					<control type="wraplist" id="6350">
+
+						<left>-155</left>
+						<right>0</right>
+						<top>40</top>
+						<height>130</height>
+						<viewtype label="535">panel</viewtype>
+						<scrolltime tween="cubic" easing="inout">400</scrolltime>
+						<orientation>horizontal</orientation>
+						<preloaditems>2</preloaditems>
+						<focusposition>1</focusposition>
+						<onup>6250</onup>
+						<ondown>6050</ondown>
+
+						<itemlayout width="250" height="130">
+
+							<control type="image">
+
+								<left>5</left>
+								<right>5</right>
+								<top>0</top>
+								<bottom>0</bottom>
+								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+
+							</control>
+
+						</itemlayout>
+
+						<focusedlayout width="250" height="130">
+
+							<control type="image">
+
+								<left>5</left>
+								<right>5</right>
+								<top>0</top>
+								<bottom>0</bottom>
+								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio align="center" aligny="top">scale</aspectratio>
+
+							</control>
+
+						</focusedlayout>
+
+						 <content target="video">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]</content>
+
+					</control>
+
+				</control>
+
+			</control>
+
+			<control type="image">
+
+				<left>95</left>
+				<top>435</top>
+				<width>250</width>
+				<height>140</height>
+				<texture border="10">list_focus.png</texture>
+
+			</control>
+
+		</control>		
+
+	</controls>
+
+</window>
