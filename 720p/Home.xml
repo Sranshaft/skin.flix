@@ -511,20 +511,70 @@
 
 			</control>
 
-			<control type="image">
+			<control type="group">
 
-				<left>95</left>
-				<top>435</top>
-				<width>250</width>
-				<height>140</height>
-				<texture border="10" colordiffuse="Color-Accent-Primary">list_focus.png</texture>
+				<left>0</left>
+				<right>0</right>
+				<top>400</top>
+				<bottom>0</bottom>
 
 				<animation type="WindowOpen">
 					<effect type="fade" start="0" end="100" time="600" delay="1600" tween="cubic" easing="inout" reversible="false" />
-					<!-- <effect type="slide" start="0,200" end="0,0" time="600" delay="1000" tween="cubic" easing="inout" reversible="false" /> -->
 				</animation>
 
-				<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="0" reversible="true" condition="Control.HasFocus(5050)">Conditional</animation>
+				<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="0" reversible="true">Hidden</animation>
+
+				<animation effect="fade" time="600" delay="1600" tween="cubic" easing="inout" start="0" end="100" reversible="true">Visible</animation>
+
+				<visible>!Control.HasFocus(5050)</visible>
+
+				<control type="image">
+
+					<left>95</left>
+					<top>35</top>
+					<width>250</width>
+					<height>140</height>
+					<texture border="10" colordiffuse="Color-Accent-Primary">list_focus.png</texture>
+
+				</control>
+
+				<control type="button">
+					
+					<left>10</left>
+					<top>75</top>
+					<include>Common-Arrow-Left</include>
+
+					<animation effect="fade" time="600" delay="600" tween="cubic" easing="inout" start="0" end="100" reversible="true" condition="System.IdleTime(2)">Conditional</animation>
+					
+				</control>
+
+				<control type="button">
+					
+					<right>10</right>
+					<top>75</top>
+					<include>Common-Arrow-Right</include>
+
+					<animation effect="fade" time="600" delay="600" tween="cubic" easing="inout" start="0" end="100" reversible="true" condition="System.IdleTime(2)">Conditional</animation>
+					
+				</control>
+
+				<control type="label">
+
+					<left>95</left>
+					<top>35</top>
+					<width>250</width>
+					<height>140</height>
+					<label></label>
+					<font>Font-Symbol-Button</font>
+					<textcolor>Color-Light-Primary</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+
+					<visible>!Control.HasFocus(6050)</visible>
+
+					<animation effect="fade" time="600" delay="600" tween="cubic" easing="inout" start="0" end="100" reversible="true" condition="System.IdleTime(2)">Conditional</animation>
+
+				</control>
 
 			</control>
 

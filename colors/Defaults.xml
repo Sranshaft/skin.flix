@@ -26,6 +26,6 @@
 	<color name="Color-Light-Tertiary">FFC8C8C8</color>
 
 	<color name="Color-Overlay-Primary">DD000000</color>
-	<color name="Color-Overlay-Secondary">AA000000</color>
+	<color name="Color-Overlay-Secondary">90000000</color>
 
 </colors>

@@ -2,6 +2,38 @@
 
 <includes>
 
+	<include name="Common-Arrow-Left">
+
+		<width>60</width>
+		<height>60</height>
+		<label></label>
+		<altlabel></altlabel>
+		<font>Font-Symbol-Button</font>
+		<textcolor>Color-Light-Primary</textcolor>
+		<focusedcolor>Color-Light-Primary</focusedcolor>
+		<textoffsetx>0</textoffsetx>
+		<textoffsety>0</textoffsety>
+		<align>center</align>
+		<aligny>center</aligny>
+
+	</include>
+
+	<include name="Common-Arrow-Right">
+
+		<width>60</width>
+		<height>60</height>
+		<label></label>
+		<altlabel></altlabel>
+		<font>Font-Symbol-Button</font>
+		<textcolor>Color-Light-Primary</textcolor>
+		<focusedcolor>Color-Light-Primary</focusedcolor>
+		<textoffsetx>0</textoffsetx>
+		<textoffsety>0</textoffsety>
+		<align>center</align>
+		<aligny>center</aligny>
+
+	</include>
+
 	<include name="Common-Group">
 
 		<left>0</left>
@@ -194,6 +226,16 @@
 
 			</control>
 
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Overlay-Secondary">colors/color_white.png</texture>
+
+			</control>
+
 		</itemlayout>
 
 		<focusedlayout width="250" height="130">
@@ -216,6 +258,18 @@
 				<bottom>0</bottom>
 				<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
 				<aspectratio align="center" aligny="top">scale</aspectratio>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Overlay-Secondary">colors/color_white.png</texture>
+
+				<animation effect="fade" start="100" end="0" time="400" delay="200" tween="cubic" easing="inout" reversible="true">Focus</animation>
 
 			</control>
 
