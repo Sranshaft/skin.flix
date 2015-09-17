@@ -16,4 +16,76 @@
 		<value>Color-Accent-Secondary</value>
 	</variable>
 
+	<!--Home Spotlight Variables-->
+
+	<variable name="Home-Spotlight-Duration">
+		<value condition="Control.HasFocus(6150)">$INFO[Container(6150).ListItem.Duration,, minutes]</value>
+		<value condition="Control.HasFocus(6250)">$INFO[Container(6250).ListItem.Duration,, minutes]</value>
+		<value condition="Control.HasFocus(6350)">$INFO[Container(6350).ListItem.Duration,, minutes]</value>
+		<value condition="Control.HasFocus(6450)">$INFO[Container(6450).ListItem.Duration,, minutes]</value>
+		<value condition="Control.HasFocus(6550)">$INFO[Container(6550).ListItem.Duration,, minutes]</value>
+		<value condition="Control.HasFocus(6650)">$INFO[Container(6650).ListItem.Duration,, minutes]</value>
+		<value>$INFO[Container(5050).ListItem.Duration,, minutes]</value>
+	</variable>
+
+	<variable name="Home-Spotlight-Fanart">
+		<value condition="Control.HasFocus(6150)">$INFO[Container(6150).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(6250)">$INFO[Container(6250).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(6350)">$INFO[Container(6350).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(6450)">$INFO[Container(6450).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(6550)">$INFO[Container(6550).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(6650)">$INFO[Container(6650).ListItem.Art(fanart)]</value>
+		<value>$INFO[Container(5050).ListItem.Art(fanart)]</value>
+	</variable>
+
+	<variable name="Home-Spotlight-MPAA">
+		<value condition="Control.HasFocus(6150)">$INFO[Container(6150).ListItem.MPAA]</value>
+		<value condition="Control.HasFocus(6250)">$INFO[Container(6250).ListItem.MPAA]</value>
+		<value condition="Control.HasFocus(6350)">$INFO[Container(6350).ListItem.MPAA]</value>
+		<value condition="Control.HasFocus(6450)">$INFO[Container(6450).ListItem.MPAA]</value>
+		<value condition="Control.HasFocus(6550)">$INFO[Container(6550).ListItem.MPAA]</value>
+		<value condition="Control.HasFocus(6650)">$INFO[Container(6650).ListItem.MPAA]</value>
+		<value>$INFO[Container(5050).ListItem.MPAA]</value>
+	</variable>
+
+	<variable name="Home-Spotlight-Plot">
+		<value condition="Control.HasFocus(6150)">$INFO[Container(6150).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(6250)">$INFO[Container(6250).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(6350)">$INFO[Container(6350).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(6450)">$INFO[Container(6450).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(6550)">$INFO[Container(6550).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(6650)">$INFO[Container(6650).ListItem.Plot]</value>
+		<value>$INFO[Container(5050).ListItem.Plot]</value>
+	</variable>
+
+	<variable name="Home-Spotlight-StarRating">
+		<value condition="Control.HasFocus(6150)">$INFO[Container(6150).ListItem.StarRating]</value>
+		<value condition="Control.HasFocus(6250)">$INFO[Container(6250).ListItem.StarRating]</value>
+		<value condition="Control.HasFocus(6350)">$INFO[Container(6350).ListItem.StarRating]</value>
+		<value condition="Control.HasFocus(6450)">$INFO[Container(6450).ListItem.StarRating]</value>
+		<value condition="Control.HasFocus(6550)">$INFO[Container(6550).ListItem.StarRating]</value>
+		<value condition="Control.HasFocus(6650)">$INFO[Container(6650).ListItem.StarRating]</value>
+		<value>$INFO[Container(5050).ListItem.StarRating]</value>
+	</variable>
+
+	<variable name="Home-Spotlight-Rating">
+		<value condition="Control.HasFocus(6150)">$INFO[Container(6150).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(6250)">$INFO[Container(6250).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(6350)">$INFO[Container(6350).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(6450)">$INFO[Container(6450).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(6550)">$INFO[Container(6550).ListItem.Rating]</value>
+		<value condition="Control.HasFocus(6650)">$INFO[Container(6650).ListItem.Rating]</value>
+		<value>$INFO[Container(5050).ListItem.Rating]</value>
+	</variable>
+
+	<variable name="Home-Spotlight-Title">
+		<value condition="Control.HasFocus(6150)">$INFO[Container(6150).ListItem.Title]</value>
+		<value condition="Control.HasFocus(6250)">$INFO[Container(6250).ListItem.Title]</value>
+		<value condition="Control.HasFocus(6350)">$INFO[Container(6350).ListItem.Title]</value>
+		<value condition="Control.HasFocus(6450)">$INFO[Container(6450).ListItem.Title]</value>
+		<value condition="Control.HasFocus(6550)">$INFO[Container(6550).ListItem.Title]</value>
+		<value condition="Control.HasFocus(6650)">$INFO[Container(6650).ListItem.Title]</value>
+		<value>$INFO[Container(5050).ListItem.Title]</value>
+	</variable>
+
 </includes>

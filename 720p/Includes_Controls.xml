@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+
+	<include name="Common-Group">
+
+		<left>0</left>
+		<right>0</right>
+		<top>0</top>
+		<height>320</height>
+
+	</include>
+
+	<include name="Common-Group-Offset">
+
+		<left>0</left>
+		<right>0</right>
+		<top>-150</top>
+		<height>320</height>
+
+	</include>
+
+	<include name="Common-Label">
+
+		<left>95</left>
+		<right>0</right>
+		<top>0</top>
+		<height>24</height>
+		<font>Font-Base</font>
+		<textcolor>Color-Light-Primary</textcolor>
+
+	</include>
+
+	<include name="Common-Wraplist">
+
+		<left>-155</left>
+		<right>0</right>
+		<top>40</top>
+		<height>130</height>
+		<viewtype label="535">panel</viewtype>
+		<scrolltime tween="cubic" easing="inout">400</scrolltime>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<focusposition>1</focusposition>
+
+	</include>
+
+	<include name="Common-Wraplist-Icon">
+
+		<include>Common-Wraplist</include>
+
+		<itemlayout width="250" height="130">
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Dark-Primary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>80</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Dark-Secondary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<top>80</top>
+				<bottom>0</bottom>
+				<width>50</width>
+				<texture colordiffuse="Color-Dark-Tertiary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<top>80</top>
+				<bottom>0</bottom>
+				<width>50</width>
+				<texture colordiffuse="Color-Light-Primary">$INFO[ListItem.Icon]</texture>
+				<aspectratio align="left" aligny="bottom">keep</aspectratio>
+
+			</control>
+
+			<control type="label">
+
+				<left>65</left>
+				<right>10</right>
+				<top>80</top>
+				<bottom>0</bottom>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Font-Caption</font>
+				<textcolor>Color-Light-Tertiary</textcolor>
+				<aligny>center</aligny>
+
+			</control>
+
+		</itemlayout>
+
+		<focusedlayout width="250" height="130">
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Dark-Primary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>80</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Dark-Secondary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<top>80</top>
+				<bottom>0</bottom>
+				<width>50</width>
+				<texture colordiffuse="Color-Dark-Tertiary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<top>80</top>
+				<bottom>0</bottom>
+				<width>50</width>
+				<texture colordiffuse="Color-Light-Primary">$INFO[ListItem.Icon]</texture>
+				<aspectratio align="left" aligny="bottom">keep</aspectratio>
+
+			</control>
+
+			<control type="label">
+
+				<left>65</left>
+				<right>10</right>
+				<top>80</top>
+				<bottom>0</bottom>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Font-Caption</font>
+				<textcolor>Color-Light-Tertiary</textcolor>
+				<aligny>center</aligny>
+
+			</control>
+
+		</focusedlayout>
+
+	</include>
+
+	<include name="Common-Wraplist-Fanart">
+
+		<include>Common-Wraplist</include>
+
+		<itemlayout width="250" height="130">
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Dark-Primary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
+				<aspectratio align="center" aligny="top">scale</aspectratio>
+
+			</control>
+
+		</itemlayout>
+
+		<focusedlayout width="250" height="130">
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Dark-Primary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
+				<aspectratio align="center" aligny="top">scale</aspectratio>
+
+			</control>
+
+		</focusedlayout>
+
+	</include>
+
+</includes>

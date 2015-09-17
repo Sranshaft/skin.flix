@@ -236,7 +236,8 @@
 				<control type="button">
 					
 					<include>Common-Breadcrumb-Button</include>
-					<label></label>
+					<label></label>
+					<altlabel></altlabel>
 					
 				</control>
 				

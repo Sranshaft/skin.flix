@@ -2,7 +2,89 @@
 
 <window id="29">
 
+	<defaultcontrol always="true">52</defaultcontrol>
+
 	<controls>
+
+		<control type="image">
+
+			<left>0</left>
+			<right>0</right>
+			<top>0</top>
+			<bottom>0</bottom>
+			<texture colordiffuse="Color-Dark-Primary">colors/color_white.png</texture>
+
+		</control>
+
+		<control type="grouplist">
+
+			<left>10</left>
+			<right>10</right>
+			<top>10</top>
+			<bottom>10</bottom>
+			<orientation>vertical</orientation>
+			<itemgap>10</itemgap>
+
+			<control type="textbox" id="2">
+
+				<left>10</left>
+				<right>10</right>
+				<height min="0" max="200">auto</height>
+				<font>Font-Spotlight</font>
+				<textcolor>Color-Light-Primary</textcolor>
+
+			</control>
+
+			<control type="textbox" id="3">
+
+				<left>10</left>
+				<right>10</right>
+				<height min="0" max="200">auto</height>
+				<font>Font-Body</font>
+				<textcolor>Color-Light-Secondary</textcolor>
+
+			</control>
+
+			<control type="panel" id="52">
+
+				<left>10</left>
+				<right>10</right>
+				<height>300</height>
+				<orientation>horizontal</orientation>
+
+				<itemlayout width="320" height="300">
+
+					<control type="image">
+
+						<left>10</left>
+						<right>10</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="320" height="300">
+
+					<control type="image">
+
+						<left>10</left>
+						<right>10</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+		</control>
 
 	</controls>
 

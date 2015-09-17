@@ -2,10 +2,9 @@
 
 <window id="0">
 
-	<defaultcontrol>5050</defaultcontrol>
+	<defaultcontrol>6050</defaultcontrol>
 	<allowoverlay>true</allowoverlay>
 
-	<onload>AlarmClock(FocusInProgress,SetFocus,00:01,silent,loop)</onload>
 	<onload>AlarmClock(MoveInProgress,Control.Move(5050,1),00:20,silent,loop)</onload>
 
 	<controls>
@@ -17,13 +16,13 @@
 			<top>0</top>
 			<bottom>0</bottom>
 
-			<!-- <include>Common-Breadcrumb</include> -->
+			<include>Common-Breadcrumb</include>
 
 			<control type="group" id="5000">
 
 				<left>0</left>
 				<right>0</right>
-				<top>0</top>
+				<top>60</top>
 				<height>430</height>
 
 				<control type="wraplist" id="5050">
@@ -49,7 +48,7 @@
 
 					</focusedlayout>
 
-					<content target="video">special://skin/playlists/In Progress (Movies).xsp</content>
+					<content target="video">special://skin/playlists/In Progress (TV Shows).xsp</content>
 
 				</control>
 
@@ -59,9 +58,11 @@
 					<right>0</right>
 					<top>0</top>
 					<bottom>0</bottom>
-					<texture align="center" aligny="top" background="true">$INFO[Container(5050).ListItem.Art(fanart)]</texture>
+					<texture align="center" aligny="top" background="true">$VAR[Home-Spotlight-Fanart]</texture>
 					<aspectratio align="center" aligny="top">scale</aspectratio>
 					<fadetime>400</fadetime>
+
+					<animation effect="fade" time="600" delay="200" tween="cubic" easing="inout" start="0" end="100" reversible="true">WindowOpen</animation>
 
 				</control>
 
@@ -86,12 +87,14 @@
 					<itemgap>16</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
 
+					<animation effect="fade" time="600" tween="cubic" easing="inout" start="0" end="100" reversible="true">WindowOpen</animation>
+
 					<control type="textbox">
 
 						<left>0</left>
 						<right>0</right>
 						<height min="0" max="200">auto</height>
-						<label>$INFO[Container(5050).ListItem.Title]</label>
+						<label>$VAR[Home-Spotlight-Title]</label>
 						<font>Font-Spotlight</font>
 						<textcolor>Color-Light-Primary</textcolor>
 
@@ -110,10 +113,10 @@
 						<control type="image">
 
 							<top>4</top>
-							<width>100</width>
+							<width>120</width>
 							<height>20</height>
 							<texture background="true" colordiffuse="Color-Accent-Primary">rating4.png</texture>
-							<aspectratio align="right">scale</aspectratio>
+							<aspectratio align="left" aligny="center">scale</aspectratio>
 							
 						</control>
 						
@@ -121,7 +124,7 @@
 
 							<width min="0" max="200">auto</width>
 							<height>24</height>
-							<label>$INFO[Container(5050).ListItem.Rating]</label>
+							<label>$VAR[Home-Spotlight-Rating]</label>
 							<font>Font-Caption</font>
 							<textcolor>Color-Light-Tertiary</textcolor>
 
@@ -131,7 +134,7 @@
 
 							<width min="0" max="200">auto</width>
 							<height>24</height>
-							<label>$INFO[Container(5050).ListItem.MPAA]</label>
+							<label>$VAR[Home-Spotlight-MPAA]</label>
 							<font>Font-Caption</font>
 							<textcolor>Color-Light-Tertiary</textcolor>
 
@@ -141,7 +144,7 @@
 
 							<width min="0" max="200">auto</width>
 							<height>24</height>
-							<label>$INFO[Container(5050).ListItem.Duration,, minutes]</label>
+							<label>$VAR[Home-Spotlight-Duration]</label>
 							<font>Font-Caption</font>
 							<textcolor>Color-Light-Tertiary</textcolor>
 
@@ -154,7 +157,7 @@
 						<left>0</left>
 						<right>0</right>
 						<height min="0" max="135">auto</height>
-						<label>$INFO[Container(5050).ListItem.Plot]</label>
+						<label>$VAR[Home-Spotlight-Plot]</label>
 						<font>Font-Body</font>
 						<textcolor>Color-Light-Tertiary</textcolor>
 
@@ -175,72 +178,187 @@
 				<itemgap>10</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="600" delay="1000" tween="cubic" easing="inout" reversible="false" />
+					<effect type="slide" start="0,200" end="0,0" time="600" delay="1000" tween="cubic" easing="inout" reversible="false" />
+				</animation>
+
 				<control type="group" id="6000">
 
-					<left>0</left>
-					<right>0</right>
-					<top>0</top>
-					<height>320</height>
+					<include>Common-Group</include>
 
-					<animation effect="fade" time="400" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6050)">Conditional</animation>
+					<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6050)">Conditional</animation>
 
 					<control type="label" id="6010">
 
-						<left>95</left>
-						<right>0</right>
-						<top>0</top>
-						<height>24</height>
-						<label>Random movies</label>
-						<font>Font-Base</font>
-						<textcolor>Color-Light-Primary</textcolor>
+						<include>Common-Label</include>
+						<label>My libraries</label>
 
 					</control>	
 
 					<control type="wraplist" id="6050">
 
-						<left>-155</left>
-						<right>0</right>
-						<top>40</top>
-						<height>130</height>
-						<viewtype label="535">panel</viewtype>
-						<scrolltime tween="cubic" easing="inout">400</scrolltime>
-						<orientation>horizontal</orientation>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
+						<include>Common-Wraplist-Icon</include>
 						<onup>5050</onup>
 						<ondown>6150</ondown>
 
-						<itemlayout width="250" height="130">
+						<content>
+				
+							<item id="1">
+								<description>Now Playing</description>
+								<label>Now playing</label>
+								<label2>$VAR[NowPlaying-Label-Primary]</label2>
+								<property name="Fanart">$VAR[NowPlaying-Thumbnail]</property>
+								<onclick>ActivateWindow(fullscreenvideo)</onclick>
+								<visible>Player.HasVideo</visible>
+							</item>
+							
+							<item id="1">
+								<description>Now Playing</description>
+								<label>Now playing</label>
+								<label2>$INFO[MusicPlayer.Title][CR]$INFO[MusicPlayer.Album]</label2>
+								<property name="Fanart">$VAR[NowPlaying-Thumbnail]</property>
+								<onclick>ActivateWindow(visualisation)</onclick>
+								<visible>Player.HasAudio</visible>
+							</item>
 
-							<control type="image">
+							<item id="2">
+								<description>Programs</description>
+								<label>$LOCALIZE[31002]</label>
+								<icon>home/home_addons_small.png</icon>
+								<onclick>ActivateWindow(programs,addons,return)</onclick>
+								<!-- <visible>Skin.HasSetting(ShowAddonsMenu)</visible> -->
+							</item>
+							
+							<item id="3">
+								<description>Videos</description>
+								<label>$LOCALIZE[31003]</label>
+								<icon>home/home_videos_small.png</icon>
+								<onclick>ActivateWindow(videos,root)</onclick>
+								<!-- <visible>Skin.HasSetting(ShowVideosMenu)</visible> -->
+							</item>
 
-								<left>5</left>
-								<right>5</right>
-								<top>0</top>
-								<bottom>0</bottom>
-								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
-								<aspectratio align="center" aligny="top">scale</aspectratio>
+							<item id="4">
+								<description>Movies</description>
+								<label>$LOCALIZE[31006]</label>
+								<label2>$INFO[Window(Home).Property(Movies.Count),, movies][CR]$INFO[Window(Home).Property(Movies.Watched),, watched][CR]$INFO[Window(Home).Property(Movies.UnWatched),, unwatched]</label2>
+								<icon>home/home_movie_small.png</icon>
+								<property name="Fanart">$INFO[Window(Home).Property(script.grab.fanart.Movie.Fanart)]</property>
+								<onclick>ActivateWindow(1110,return)</onclick>
+								<!-- <visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible> -->
+							</item>
 
-							</control>
+							<item id="5">
+								<description>TV Shows</description>
+								<label>$LOCALIZE[31007]</label>
+								<label2>$INFO[Window(Home).Property(TVShows.Count),, tv shows][CR]$INFO[Window(Home).Property(TVShows.Watched),, watched][CR]$INFO[Window(Home).Property(TVShows.UnWatched),, unwatched]</label2>
+								<icon>home/home_tvshow_small.png</icon>
+								<property name="Fanart">$INFO[Window(Home).Property(script.grab.fanart.TV.Fanart)]</property>
+								<onclick>ActivateWindow(1111,return)</onclick>
+								<!-- <visible>Library.HasContent(tvshows) + Skin.HasSetting(ShowTVShowsMenu)</visible> -->
+							</item>
+							
+							<item id="6">
+								<description>Live TV</description>
+								<label>Live TV</label>
+								<icon>home/home_livetv_small.png</icon>
+								<onclick>ActivateWindow(1112,return)</onclick>
+								<!-- <visible>System.GetBool(pvrmanager.enabled) + Skin.HasSetting(ShowLiveTVMenu)</visible> -->
+							</item>
+							
+							<item id="7">
+								<description>Music</description>
+								<label>$LOCALIZE[31004]</label>
+								<label2>$INFO[Window(Home).Property(Music.ArtistsCount),, artists][CR]$INFO[Window(Home).Property(Music.AlbumsCount),, albums][CR]$INFO[Window(Home).Property(Music.SongsCount),, songs]</label2>
+								<icon>home/home_music_small.png</icon>
+								<property name="Fanart">$INFO[Window(Home).Property(script.grab.fanart.Music.Fanart)]</property>
+								<onclick>ActivateWindow(1113,return)</onclick>
+								<!-- <visible>Skin.HasSetting(ShowMusicMenu)</visible> -->
+							</item>
+							
+							<item id="8">
+								<description>Games</description>
+								<label>Games</label>
+								<icon>home/home_games_small.png</icon>
+								<onclick>ActivateWindow(Games,Files,return)</onclick>
+								<!-- <visible>Skin.HasSetting(ShowGamesMenu)</visible> -->
+							</item>
+							
+							<item id="9">
+								<description>Pictures</description>
+								<label>$LOCALIZE[31005]</label>
+								<icon>home/home_pictures_small.png</icon>
+								<onclick>ActivateWindow(2)</onclick>
+								<!-- <visible>Skin.HasSetting(ShowPicturesMenu)</visible> -->
+							</item>
+							
+							<item id="10">
+								<description>Play Disc</description>
+								<label>$LOCALIZE[31014]</label>
+								<label2>$INFO[System.DVDLabel]</label2>
+								<icon>home/home_dvd_small.png</icon>
+								<onclick>PlayDVD</onclick>
+								<!-- <visible>System.HasMediadvd</visible> -->
+							</item>
+							
+							<item id="11">
+								<description>Weather</description>
+								<label>$LOCALIZE[31010]</label>
+								<label2>$INFO[Window(Weather).Property(Current.Condition)][CR]$INFO[Window(Weather).Property(Current.Temperature),,°]</label2>
+								<icon>home/home_weather_small.png</icon>
+								<property name="Fanart">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode),,\1.jpg]</property>
+								<onclick>ActivateWindow(weather,return)</onclick>
+								<!-- <visible>Skin.HasSetting(ShowWeatherMenu)</visible> -->
+							</item>
 
-						</itemlayout>
+							<item id="12">
+								<description>Favourites</description>
+								<label>$LOCALIZE[31008]</label>
+								<thumb>home/home_favourites_small.png</thumb>
+								<onclick>ActivateWindow(favourites)</onclick>
+								<!-- <visible>Skin.HasSetting(ShowFavoritesMenu)</visible> -->
+							</item>
 
-						<focusedlayout width="250" height="130">
+							<item id="13">
+								<description>Profiles</description>
+								<label>$LOCALIZE[31009]</label>
+								<icon>home/home_profiles_small.png</icon>
+								<onclick>ActivateWindow(profiles)</onclick>
+								<!-- <visible>Skin.HasSetting(ShowProfilesMenu)</visible> -->
+							</item>
+							
+							<item id="14">
+								<description>File Manager</description>
+								<label>$LOCALIZE[31011]</label>
+								<icon>home/home_filemanager_small.png</icon>
+								<onclick>ActivateWindow(filemanager)</onclick>
+								<!-- <visible>Skin.HasSetting(ShowFileManagerMenu)</visible> -->
+							</item>
 
-							<control type="image">
+							<item id="15">
+								<description>Settings</description>
+								<label>$LOCALIZE[31012]</label>
+								<icon>home/home_settings_small.png</icon>
+								<onclick>ActivateWindow(settings)</onclick>
+							</item>
 
-								<left>5</left>
-								<right>5</right>
-								<top>0</top>
-								<bottom>0</bottom>
-								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
-								<aspectratio align="center" aligny="top">scale</aspectratio>
+							<item id="16">
+								<description>Shutdown</description>
+								<label>$LOCALIZE[31013]</label>
+								<icon>home/home_shutdown_small.png</icon>
+								<onclick>ActivateWindow(shutdownmenu)</onclick>
+								<!-- <visible>Skin.HasSetting(ShowShutdownMenu)</visible> -->
+							</item>
 
-							</control>
+							<item id="17">
+								<description>Search</description>
+								<label>Search</label>
+								<icon>home/home_search_small.png</icon>
+								<onclick>XBMC.RunScript(script.globalsearch)</onclick>
+								<!-- <visible>Skin.HasSetting(ShowSearchMenu)</visible> -->
+							</item>
 
-						</focusedlayout>
-
-						 <content target="video">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</content>
+						</content>
 
 					</control>
 
@@ -248,70 +366,24 @@
 
 				<control type="group" id="6100">
 
-					<left>0</left>
-					<right>0</right>
-					<top>-150</top>
-					<height>320</height>
+					<include>Common-Group-Offset</include>
 
-					<animation effect="fade" time="400" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6150)">Conditional</animation>
+					<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6150)">Conditional</animation>
 
 					<control type="label" id="6110">
 
-						<left>95</left>
-						<right>0</right>
-						<top>0</top>
-						<height>24</height>
-						<label>Recent movies</label>
-						<font>Font-Base</font>
-						<textcolor>Color-Light-Primary</textcolor>
+						<include>Common-Label</include>
+						<label>You might like these movies...</label>
 
 					</control>	
 
 					<control type="wraplist" id="6150">
 
-						<left>-155</left>
-						<right>0</right>
-						<top>40</top>
-						<height>130</height>
-						<viewtype label="535">panel</viewtype>
-						<scrolltime tween="cubic" easing="inout">400</scrolltime>
-						<orientation>horizontal</orientation>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
+						<include>Common-Wraplist-Fanart</include>
 						<onup>6050</onup>
 						<ondown>6250</ondown>
 
-						<itemlayout width="250" height="130">
-
-							<control type="image">
-
-								<left>5</left>
-								<right>5</right>
-								<top>0</top>
-								<bottom>0</bottom>
-								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
-								<aspectratio align="center" aligny="top">scale</aspectratio>
-
-							</control>
-
-						</itemlayout>
-
-						<focusedlayout width="250" height="130">
-
-							<control type="image">
-
-								<left>5</left>
-								<right>5</right>
-								<top>0</top>
-								<bottom>0</bottom>
-								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
-								<aspectratio align="center" aligny="top">scale</aspectratio>
-
-							</control>
-
-						</focusedlayout>
-
-						 <content target="video">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</content>
+						<content target="video">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</content>
 
 					</control>
 
@@ -319,70 +391,23 @@
 
 				<control type="group" id="6200">
 
-					<left>0</left>
-					<right>0</right>
-					<top>-150</top>
-					<height>320</height>
+					<include>Common-Group-Offset</include>
 
-					<animation effect="fade" time="400" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6250)">Conditional</animation>
+					<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6250)">Conditional</animation>
 
 					<control type="label" id="6210">
 
-						<left>95</left>
-						<right>0</right>
-						<top>0</top>
-						<height>24</height>
-						<label>These movies have been recommended...</label>
-						<font>Font-Base</font>
-						<textcolor>Color-Light-Primary</textcolor>
+						<include>Common-Label</include>
+						<label>These movies have recently been added...</label>
 
 					</control>	
 
 					<control type="wraplist" id="6250">
 
-						<left>-155</left>
-						<right>0</right>
-						<top>40</top>
-						<height>130</height>
-						<viewtype label="535">panel</viewtype>
-						<scrolltime tween="cubic" easing="inout">400</scrolltime>
-						<orientation>horizontal</orientation>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<onup>6150</onup>
+						<include>Common-Wraplist-Fanart</include>
 						<ondown>6350</ondown>
 
-						<itemlayout width="250" height="130">
-
-							<control type="image">
-
-								<left>5</left>
-								<right>5</right>
-								<top>0</top>
-								<bottom>0</bottom>
-								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
-								<aspectratio align="center" aligny="top">scale</aspectratio>
-
-							</control>
-
-						</itemlayout>
-
-						<focusedlayout width="250" height="130">
-
-							<control type="image">
-
-								<left>5</left>
-								<right>5</right>
-								<top>0</top>
-								<bottom>0</bottom>
-								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
-								<aspectratio align="center" aligny="top">scale</aspectratio>
-
-							</control>
-
-						</focusedlayout>
-
-						 <content target="video">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</content>
+						<content target="video">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</content>
 
 					</control>
 
@@ -390,71 +415,96 @@
 
 				<control type="group" id="6300">
 
-					<left>0</left>
-					<right>0</right>
-					<top>-150</top>
-					<height>320</height>
+					<include>Common-Group-Offset</include>
 
-					<animation effect="fade" time="400" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6350)">Conditional</animation>
+					<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6350)">Conditional</animation>
 
 					<control type="label" id="6310">
 
-						<left>95</left>
-						<right>0</right>
-						<top>0</top>
-						<height>24</height>
-						<label>These movies have been recommended...</label>
-						<font>Font-Base</font>
-						<textcolor>Color-Light-Primary</textcolor>
-
+						<include>Common-Label</include>
+						<label>You are currently watching these movies...</label>
+						
 					</control>	
 
 					<control type="wraplist" id="6350">
 
-						<left>-155</left>
-						<right>0</right>
-						<top>40</top>
-						<height>130</height>
-						<viewtype label="535">panel</viewtype>
-						<scrolltime tween="cubic" easing="inout">400</scrolltime>
-						<orientation>horizontal</orientation>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<onup>6250</onup>
+						<include>Common-Wraplist-Fanart</include>
+						<ondown>6450</ondown>
+
+						<content target="video">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</content>
+						 
+					</control>
+
+				</control>
+
+				<control type="group" id="6400">
+
+					<include>Common-Group-Offset</include>
+
+					<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6450)">Conditional</animation>
+
+					<control type="label" id="6410">
+
+						<include>Common-Label</include>
+						<label>You might like these episodes...</label>
+						
+					</control>	
+
+					<control type="wraplist" id="6450">
+
+						<include>Common-Wraplist-Fanart</include>
+						<ondown>6550</ondown>
+
+						<content target="video">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]</content>
+						 
+					</control>
+
+				</control>
+
+				<control type="group" id="6500">
+
+					<include>Common-Group-Offset</include>
+
+					<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6550)">Conditional</animation>
+
+					<control type="label" id="6510">
+
+						<include>Common-Label</include>
+						<label>These episodes have recently been added...</label>
+						
+					</control>	
+
+					<control type="wraplist" id="6550">
+
+						<include>Common-Wraplist-Fanart</include>
+						<ondown>6650</ondown>
+
+						<content target="video">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</content>
+						 
+					</control>
+
+				</control>
+
+				<control type="group" id="6600">
+
+					<include>Common-Group-Offset</include>
+
+					<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6650)">Conditional</animation>
+
+					<control type="label" id="6610">
+
+						<include>Common-Label</include>
+						<label>You are currently watching these episodes...</label>
+						
+					</control>	
+
+					<control type="wraplist" id="6650">
+
+						<include>Common-Wraplist-Fanart</include>
 						<ondown>6050</ondown>
 
-						<itemlayout width="250" height="130">
-
-							<control type="image">
-
-								<left>5</left>
-								<right>5</right>
-								<top>0</top>
-								<bottom>0</bottom>
-								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
-								<aspectratio align="center" aligny="top">scale</aspectratio>
-
-							</control>
-
-						</itemlayout>
-
-						<focusedlayout width="250" height="130">
-
-							<control type="image">
-
-								<left>5</left>
-								<right>5</right>
-								<top>0</top>
-								<bottom>0</bottom>
-								<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
-								<aspectratio align="center" aligny="top">scale</aspectratio>
-
-							</control>
-
-						</focusedlayout>
-
-						 <content target="video">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]</content>
-
+						<content target="video">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</content>
+						 
 					</control>
 
 				</control>
@@ -467,7 +517,14 @@
 				<top>435</top>
 				<width>250</width>
 				<height>140</height>
-				<texture border="10">list_focus.png</texture>
+				<texture border="10" colordiffuse="Color-Accent-Primary">list_focus.png</texture>
+
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="600" delay="1600" tween="cubic" easing="inout" reversible="false" />
+					<!-- <effect type="slide" start="0,200" end="0,0" time="600" delay="1000" tween="cubic" easing="inout" reversible="false" /> -->
+				</animation>
+
+				<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="0" reversible="true" condition="Control.HasFocus(5050)">Conditional</animation>
 
 			</control>
 

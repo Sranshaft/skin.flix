@@ -5,5 +5,76 @@
 	<include file="Variable.xml" />
 
 	<include file="Includes_Breadcrumb.xml" />
+	<include file="Includes_Controls.xml" />
+	<include file="Includes_Home.xml" />
+
+	<!--											-->
+	<!--	      Debug Includes (Delete)			-->
+	<!--											-->
+	
+	<include name="ContainerInfo">
+		<width>1260</width>
+		<height>14</height>
+		<textcolor>Green</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+		<font>Font-Caption</font>
+	</include>
+
+	<include name="ContentType">
+		<width>1260</width>
+		<height>14</height>
+		<textcolor>Red</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+		<font>Font-Caption</font>
+	</include>
+
+	<include name="DialogID">
+		<width>1260</width>
+		<height>14</height>
+		<textcolor>Green</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+		<font>Font-Caption</font>
+	</include>
+
+	<include name="PathID">
+		<width>1260</width>
+		<height>14</height>
+		<textcolor>White</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+		<font>Font-Caption</font>
+	</include>
+
+	<include name="WindowID">
+		<width>1260</width>
+		<height>14</height>
+		<textcolor>Blue</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+		<font>Font-Caption</font>
+	</include>
+
+	<include name="HiddenButton">
+		<posx>-20</posx>
+		<posy>-20</posy>
+		<width>1</width>
+		<height>1</height>
+		<label>-</label>
+		<texturenofocus>-</texturenofocus>
+		<texturefocus>-</texturefocus>
+		<font>Font-Caption</font>
+	</include>
+
+	<include name="Common-Dimensions">
+		
+		<left>0</left>
+		<right>0</right>
+		<top>0</top>
+		<bottom>0</bottom>
+		
+	</include>
 
 </includes>
