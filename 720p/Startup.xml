@@ -2,10 +2,11 @@
 
 <window id="2999">
 
+	<!--Splash Screen-->
+	<onload>AlarmClock(CloseStartup,ReplaceWindow($INFO[System.StartupWindow]),00:02,silent)</onload>
+
 	<controls>
 
-		<!--Splash Screen-->
-		<onload>AlarmClock(CloseStartup,ReplaceWindow($INFO[System.StartupWindow]),00:10,silent)</onload>
 
 	</controls>
 

@@ -2,7 +2,183 @@
 
 <window id="2003">
 
+	<defaultcontrol>7301</defaultcontrol>
+	
 	<controls>
+
+		<control type="group">
+
+			<include>Common-Dimensions</include>
+
+			<control type="group" id="5000">
+
+				<include>Common-Spotlight-Group</include>
+
+				<control type="grouplist" id="7000">
+
+					<include>Common-Spotlight-Grouplist</include>
+					<onright>50</onright>
+
+					<include name="Common-Spotlight-Information">
+
+						<param name="title">$INFO[ListItem.Label]</param>
+						<param name="rating">$INFO[ListItem.Rating]</param>
+						<param name="mpaa">$INFO[ListItem.MPAA]</param>
+						<param name="duration">$INFO[ListItem.Duration,, minutes]</param>
+						<param name="plot">$INFO[ListItem.Plot]</param>
+
+					</include>
+
+					<control type="button" id="7300">
+				
+						<include>Common-Button</include>
+						<label>    Browse</label>
+						<onclick>SendClick(8)</onclick>
+						
+						<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+
+					</control>
+
+					<control type="button" id="7301">
+							
+						<include>Common-Button</include>
+						<label>    $LOCALIZE[208]</label>
+						<onclick>SendClick(8)</onclick>
+						
+						<visible>Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos)</visible>
+	
+					</control>
+
+					<control type="button" id="7302">
+									
+						<include>Common-Button</include>
+						<label>    $LOCALIZE[13404]</label>
+						<onclick>SendClick(9)</onclick>
+
+						<visible>ListItem.IsResumable</visible>
+
+					</control>
+
+					<control type="button" id="7303">
+									
+						<include>Common-Button</include>
+						<label>    $LOCALIZE[20410]</label>
+						<onclick>SendClick(11)</onclick>
+
+						<visible>!IsEmpty(ListItem.Trailer)</visible>
+
+					</control>
+
+					<control type="button" id="7304">
+									
+						<include>Common-Button</include>
+						<label>    Extras</label>
+						<onclick>XBMC.RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
+
+						<visible>System.HasAddon(script.videoextras) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(TVShows)] + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
+
+					</control>
+
+					<control type="button" id="7305">
+									
+						<include>Common-Button</include>
+						<label>    $LOCALIZE[184]</label>
+						<onclick>SendClick(6)</onclick>
+
+					</control>
+
+					<control type="button" id="7306">
+									
+						<include>Common-Button</include>
+						<label>    Edit info</label>
+						<onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID])</onclick>
+
+						<visible>System.HasAddon(script.libraryeditor)</visible>
+
+					</control>
+
+					<control type="button" id="7307">
+									
+						<include>Common-Button</include>
+						<label>    Get artwork</label>
+						<onclick>SendClick(10)</onclick>
+						
+					</control>
+
+					<control type="group" id="6000">
+
+						<include>Common-Group</include>
+
+						<control type="label" id="6010">
+
+							<include name="Common-Label">
+								<param name="left">0</param>
+							</include>
+
+							<label>Starring...</label>
+
+						</control>	
+
+						<control type="fixedlist" id="50">
+
+							<include>Common-Wraplist-Square</include>
+							<onup>7307</onup>
+
+						</control>
+
+						<control type="image">
+
+							<left>0</left>
+							<top>40</top>
+							<width>200</width>
+							<height>200</height>
+							<texture border="10" colordiffuse="Color-Accent-Primary">list_focus.png</texture>
+
+							<visible>Control.HasFocus(50)</visible>
+
+							<animation effect="fade" time="600" tween="cubic" easing="inout" start="0" end="100" reversible="true">Visible</animation>
+
+						</control>
+
+					</control>
+
+				</control>
+
+			</control>
+
+		</control>
+
+		<control type="button" id="8">
+			<visible>false</visible>
+		</control>
+
+		<control type="button" id="9">
+			<visible>false</visible>
+		</control>
+
+		<control type="button" id="11">
+			<visible>false</visible>
+		</control>
+
+		<control type="button" id="105">
+			<visible>false</visible>
+		</control>
+
+		<control type="button" id="6">
+			<visible>false</visible>
+		</control>
+
+		<control type="button" id="15">
+			<visible>false</visible>
+		</control>
+
+		<control type="button" id="10">
+			<visible>false</visible>
+		</control>
+
+		<control type="button" id="100">
+			<visible>false</visible>
+		</control>
 
 	</controls>
 

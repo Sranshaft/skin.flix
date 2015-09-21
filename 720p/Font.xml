@@ -10,19 +10,21 @@
 			<name>Font-Spotlight</name>
 			<filename>SegoeUI-Black.ttf</filename>
 			<size>36</size>
-			<linespacing>0.65</linespacing>
+			<linespacing>0.75</linespacing>
 		</font>
 
 		<font>
 			<name>Font-Header</name>
 			<filename>SegoeUI-Bold.ttf</filename>
 			<size>30</size>
+			<style>uppercase</style>
 		</font>
 
 		<font>
 			<name>Font-Subheader</name>
 			<filename>SegoeUI-Semilight.ttf</filename>
 			<size>30</size>
+			<style>uppercase</style>
 		</font>
 
 		<font>
@@ -72,9 +74,15 @@
 		</font>
 
 		<font>
-			<name>Font-Symbol-Button</name>
+			<name>Font-Symbol-Button-Normal</name>
 			<filename>materialdesignicons-webfont.ttf</filename>
 			<size>36</size>
+		</font>
+
+		<font>
+			<name>Font-Symbol-Button-Large</name>
+			<filename>materialdesignicons-webfont.ttf</filename>
+			<size>54</size>
 		</font>
 
 		<!--Generic Fonts-->

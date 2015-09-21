@@ -6,9 +6,9 @@
 
 		<width>60</width>
 		<height>60</height>
-		<label></label>
-		<altlabel></altlabel>
-		<font>Font-Symbol-Button</font>
+		<label></label>
+		<altlabel></altlabel>
+		<font>Font-Symbol-Button-Large</font>
 		<textcolor>Color-Light-Primary</textcolor>
 		<focusedcolor>Color-Light-Primary</focusedcolor>
 		<textoffsetx>0</textoffsetx>
@@ -22,14 +22,32 @@
 
 		<width>60</width>
 		<height>60</height>
-		<label></label>
-		<altlabel></altlabel>
-		<font>Font-Symbol-Button</font>
+		<label></label>
+		<altlabel></altlabel>
+		<font>Font-Symbol-Button-Large</font>
 		<textcolor>Color-Light-Primary</textcolor>
 		<focusedcolor>Color-Light-Primary</focusedcolor>
 		<textoffsetx>0</textoffsetx>
 		<textoffsety>0</textoffsety>
 		<align>center</align>
+		<aligny>center</aligny>
+
+	</include>
+
+	<include name="Common-Button">
+
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>200</width>
+		<height>50</height>
+		<texturefocus colordiffuse="$VAR[Color-Accent-Primary]">colors/color_white.png</texturefocus>
+		<texturenofocus colordiffuse="Color-Dark-Secondary">-</texturenofocus>
+		<font>Font-Symbol</font>
+		<textcolor>Color-Light-Primary</textcolor>
+		<focusedcolor>Color-Light-Primary</focusedcolor>
+		<textoffsetx>18</textoffsetx>
+		<textoffsety>0</textoffsety>
+		<align>left</align>
 		<aligny>center</aligny>
 
 	</include>
@@ -52,28 +70,460 @@
 
 	</include>
 
+	<include name="Common-Indicator">
+
+		<control type="group">
+
+			<left>0</left>
+			<right>0</right>
+			<top>400</top>
+			<bottom>0</bottom>
+
+			<include>Animation-Control-WindowOpen-Fade</include>
+			<include>Animation-Control-WindowClose-Fade</include>
+			<include>Animation-Control-VisibleChange-Fade</include>
+
+			<visible>$PARAM[group-visible]</visible>
+
+			<control type="image">
+
+				<left>95</left>
+				<top>35</top>
+				<width>250</width>
+				<height>140</height>
+				<texture border="10" colordiffuse="Color-Accent-Primary">list_focus.png</texture>
+
+			</control>
+
+			<control type="button">
+				
+				<left>10</left>
+				<top>75</top>
+				<include>Common-Arrow-Left</include>
+
+				<include>Animation-Control-SystemIdle-Fade</include>
+
+				<visible>$PARAM[control-visible]</visible>
+				
+			</control>
+
+			<control type="button">
+				
+				<left>370</left>
+				<top>75</top>
+				<include>Common-Arrow-Right</include>
+
+				<include>Animation-Control-SystemIdle-Fade</include>
+
+				<visible>$PARAM[control-visible]</visible>
+				
+			</control>
+
+			<control type="label">
+
+				<left>95</left>
+				<top>35</top>
+				<width>250</width>
+				<height>140</height>
+				<label></label>
+				<font>Font-Symbol-Button-Large</font>
+				<textcolor>Color-Light-Primary</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+
+				<include>Animation-Control-SystemIdle-Fade</include>
+
+				<visible>$PARAM[control-visible]</visible>
+
+			</control>
+
+		</control>
+
+	</include>
+
 	<include name="Common-Label">
+
+		<param name="left" default="95" />
+
+		<definition>
+			<left>$PARAM[left]</left>
+			<right>0</right>
+			<top>0</top>
+			<height>24</height>
+			<font>Font-Base</font>
+			<textcolor>Color-Light-Primary</textcolor>
+		</definition>
+
+	</include>
+
+	<include name="Common-Spotlight-Background">
+
+		<control type="wraplist" id="5050">
+
+			<left>350</left>
+			<right>0</right>
+			<top>0</top>
+			<bottom>300</bottom>
+			<viewtype label="535">panel</viewtype>
+			<scrolltime tween="cubic" easing="inout">400</scrolltime>
+			<orientation>horizontal</orientation>
+			<preloaditems>2</preloaditems>
+			<focusposition>1</focusposition>
+			<ondown>6050</ondown>
+
+			<visible allowhiddenfocus="true">false</visible>
+
+			<itemlayout />
+			<focusedlayout />
+
+			<content target="video">$PARAM[content]</content>
+
+		</control>
+
+		<control type="image">
+
+			<left>350</left>
+			<right>0</right>
+			<top>0</top>
+			<bottom>300</bottom>
+			<texture align="center" aligny="top" background="true">$PARAM[fanart]</texture>
+			<aspectratio align="center" aligny="top">scale</aspectratio>
+			<fadetime>400</fadetime>
+
+			<include>Animation-Control-WindowOpen-Fade</include>
+			<include>Animation-Control-VisibleChange-Fade</include>
+
+		</control>
+
+		<control type="image">
+
+			<left>0</left>
+			<right>0</right>
+			<top>0</top>
+			<bottom>300</bottom>
+			<texture>background/background_shadowbox.png</texture>
+
+			<include>Animation-Control-WindowOpen-Fade</include>
+			<include>Animation-Control-VisibleChange-Fade</include>
+			
+		</control>
+
+	</include>
+
+	<include name="Common-Spotlight-Group">
+
+		<left>0</left>
+		<right>0</right>
+		<top>60</top>
+		<bottom>0</bottom>
+
+	</include>
+
+	<include name="Common-Spotlight-Grouplist">
 
 		<left>95</left>
 		<right>0</right>
-		<top>0</top>
-		<height>24</height>
-		<font>Font-Base</font>
-		<textcolor>Color-Light-Primary</textcolor>
+		<top>50</top>
+		<bottom>0</bottom>
+		<orientation>vertical</orientation>
+		<aligny>top</aligny>
+		<itemgap>16</itemgap>
+		<usecontrolcoords>true</usecontrolcoords>
+
+		<include>Animation-Control-WindowOpen-Fade</include>
+		<include>Animation-Control-VisibleChange-Fade</include>
+
+	</include>		
+
+	<include name="Common-Spotlight-Information">
+
+		<control type="textbox">
+
+			<left>0</left>
+			<width>490</width>
+			<height min="0" max="200">auto</height>
+			<label>$PARAM[title]</label>
+			<font>Font-Spotlight</font>
+			<textcolor>Color-Light-Primary</textcolor>
+
+		</control>
+
+		<control type="grouplist">
+
+			<left>0</left>
+			<top>-10</top>
+			<width>490</width>
+			<height>24</height>
+			<orientation>horizontal</orientation>
+			<itemgap>10</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+
+			<control type="image">
+
+				<top>4</top>
+				<width>100</width>
+				<height>20</height>
+				<texture background="true" colordiffuse="Color-Accent-Primary">$INFO[ListItem.StarRating]</texture>
+				<aspectratio align="left" aligny="center">keep</aspectratio>
+
+			</control>
+			
+			<control type="label">
+
+				<width min="0" max="490">auto</width>
+				<height>24</height>
+				<label>$PARAM[rating]   $PARAM[mpaa]   $PARAM[duration]</label>
+				<font>Font-Caption</font>
+				<textcolor>Color-Light-Tertiary</textcolor>
+
+			</control>
+
+		</control>
+
+		<control type="textbox">
+
+			<left>0</left>
+			<width>490</width>
+			<height min="0" max="110">auto</height>
+			<label>$PARAM[plot]</label>
+			<font>Font-Body</font>
+			<textcolor>Color-Light-Tertiary</textcolor>
+
+		</control>
+
+	</include>
+
+	<include name="Common-VideoWindow">
+
+		<control type="group">
+
+			<right>20</right>
+			<bottom>20</bottom>
+			<width>352</width>
+			<height>200</height>
+			<visible>Player.HasMedia</visible>
+
+			<include>Animation-Control-WindowOpen-Fade</include>
+			<include>Animation-Control-VisibleChange-Fade</include>
+
+			<control type="image">
+
+				<left>0</left>
+				<right>0</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Dark-Primary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>5</top>
+				<bottom>5</bottom>
+				<texture>colors/color_black.png</texture>
+
+			</control>
+
+			<control type="videowindow">
+
+				<left>5</left>
+				<right>5</right>
+				<top>5</top>
+				<bottom>5</bottom>
+
+			</control>
+
+			<control type="progress" id="12">
+		      
+		      	<left>5</left>
+				<right>5</right>
+				<top>140</top>
+				<height>1</height>
+			    <texturebg border="5" colordiffuse="Color-Overlay-Primary">colors/color_white.png</texturebg>
+			    <lefttexture border="5" colordiffuse="Color-Accent-Primary">-</lefttexture>
+			    <midtexture border="5" colordiffuse="Color-Accent-Primary">colors/color_white.png</midtexture>
+			    <righttexture border="5" colordiffuse="Color-Accent-Primary">-</righttexture>
+			    <info>Player.Progress</info>
+
+			    <include>Animation-Control-SystemIdle-FadeOut</include>
+
+		</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>145</top>
+				<bottom>5</bottom>
+				<texture colordiffuse="Color-Dark-Secondary">colors/color_white.png</texture>
+
+				<include>Animation-Control-SystemIdle-FadeOut</include>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<top>145</top>
+				<bottom>5</bottom>
+				<width>50</width>
+				<texture colordiffuse="Color-Dark-Tertiary">colors/color_white.png</texture>
+
+				<include>Animation-Control-SystemIdle-FadeOut</include>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<top>145</top>
+				<bottom>5</bottom>
+				<width>50</width>
+				<texture>$VAR[NowPlaying-Thumbnail]</texture>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
+
+				<include>Animation-Control-SystemIdle-FadeOut</include>
+
+			</control>
+
+			<control type="label">
+
+				<left>5</left>
+				<top>145</top>
+				<bottom>5</bottom>
+				<width>50</width>
+				<label></label>
+				<font>Font-Symbol-Button-Normal</font>
+				<textcolor>Color-Light-Primary</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+
+				<include>Animation-Control-SystemIdle-FadeOut</include>
+
+			</control>
+
+			<control type="fadelabel" id="1">
+        
+        		<left>65</left>
+        		<right>10</right>
+        		<top>145</top>
+        		<bottom>5</bottom>
+        		<pauseatend>2000</pauseatend>
+        		<scrollout>false</scrollout>
+        		<resetonlabelchange>true</resetonlabelchange>
+        		<label>$VAR[NowPlaying-Label-Primary]</label>
+        		<label>$INFO[Player.Time(hh:mm:ss)] / [B]$INFO[Player.Duration(hh:mm:ss)][/B]</label>
+        		<font>Font-Caption</font>
+        		<aligny>center</aligny>
+        		<textcolor>Color-Light-Tertiary</textcolor>
+
+        		<include>Animation-Control-SystemIdle-FadeOut</include>
+
+  			</control>		
+
+		</control>
 
 	</include>
 
 	<include name="Common-Wraplist">
 
-		<left>-155</left>
-		<right>0</right>
-		<top>40</top>
-		<height>130</height>
-		<viewtype label="535">panel</viewtype>
-		<scrolltime tween="cubic" easing="inout">400</scrolltime>
-		<orientation>horizontal</orientation>
-		<preloaditems>2</preloaditems>
-		<focusposition>1</focusposition>
+		<param name="left" default="-155" />
+		<param name="height" default="130" />
+		<param name="position" default="1" />
+
+		<definition>
+
+			<left>$PARAM[left]</left>
+			<right>0</right>
+			<top>40</top>
+			<height>$PARAM[height]</height>
+			<viewtype label="535">panel</viewtype>
+			<scrolltime tween="cubic" easing="inout">400</scrolltime>
+			<orientation>horizontal</orientation>
+			<preloaditems>2</preloaditems>
+			<focusposition>$PARAM[position]</focusposition>
+
+		</definition>
+
+	</include>
+
+	<include name="Common-Wraplist-Fanart">
+
+		<include>Common-Wraplist</include>
+
+		<itemlayout width="250" height="130">
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Dark-Primary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture align="center" aligny="top" background="true">$VAR[Control-Wraplist-Image]</texture>
+				<aspectratio align="center" aligny="top">scale</aspectratio>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Overlay-Secondary">colors/color_white.png</texture>
+
+			</control>
+
+		</itemlayout>
+
+		<focusedlayout width="250" height="130">
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Dark-Primary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture align="center" aligny="top" background="true">$VAR[Control-Wraplist-Image]</texture>
+				<aspectratio align="center" aligny="top">scale</aspectratio>
+
+			</control>
+
+			<control type="image">
+
+				<left>5</left>
+				<right>5</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="Color-Overlay-Secondary">colors/color_white.png</texture>
+
+				<animation effect="fade" start="100" end="0" time="400" delay="200" tween="cubic" easing="inout" reversible="true">Focus</animation>
+
+			</control>
+
+		</focusedlayout>
 
 	</include>
 
@@ -199,18 +649,24 @@
 
 	</include>
 
-	<include name="Common-Wraplist-Fanart">
+	<include name="Common-Wraplist-Square">
 
-		<include>Common-Wraplist</include>
+		<include name="Common-Wraplist">
 
-		<itemlayout width="250" height="130">
+			<param name="left">0</param>
+			<param name="height">300</param>
+			<param name="position">0</param>
+
+		</include>
+
+		<itemlayout width="200" height="300">
 
 			<control type="image">
 
 				<left>5</left>
 				<right>5</right>
 				<top>0</top>
-				<bottom>0</bottom>
+				<bottom>105</bottom>
 				<texture colordiffuse="Color-Dark-Primary">colors/color_white.png</texture>
 
 			</control>
@@ -220,9 +676,9 @@
 				<left>5</left>
 				<right>5</right>
 				<top>0</top>
-				<bottom>0</bottom>
-				<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
-				<aspectratio align="center" aligny="top">scale</aspectratio>
+				<bottom>105</bottom>
+				<texture align="center" aligny="center" background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
 
 			</control>
 
@@ -231,21 +687,35 @@
 				<left>5</left>
 				<right>5</right>
 				<top>0</top>
-				<bottom>0</bottom>
+				<bottom>105</bottom>
 				<texture colordiffuse="Color-Overlay-Secondary">colors/color_white.png</texture>
+
+			</control>
+
+			<control type="textbox">
+
+				<left>5</left>
+				<right>5</right>
+				<top>200</top>
+				<bottom>10</bottom>
+				<label>[B]$INFO[ListItem.Label][/B][CR]as $INFO[ListItem.Label2]</label>
+				<font>Font-Caption</font>
+				<textcolor>Color-Light-Tertiary</textcolor>
+				<aligny>top</aligny>
+				<wrapmultiline>true</wrapmultiline>
 
 			</control>
 
 		</itemlayout>
 
-		<focusedlayout width="250" height="130">
+		<focusedlayout width="200" height="300">
 
 			<control type="image">
 
 				<left>5</left>
 				<right>5</right>
 				<top>0</top>
-				<bottom>0</bottom>
+				<bottom>105</bottom>
 				<texture colordiffuse="Color-Dark-Primary">colors/color_white.png</texture>
 
 			</control>
@@ -255,9 +725,9 @@
 				<left>5</left>
 				<right>5</right>
 				<top>0</top>
-				<bottom>0</bottom>
-				<texture align="center" aligny="top" background="true">$INFO[ListItem.Art(fanart)]</texture>
-				<aspectratio align="center" aligny="top">scale</aspectratio>
+				<bottom>105</bottom>
+				<texture align="center" aligny="center" background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
 
 			</control>
 
@@ -266,10 +736,24 @@
 				<left>5</left>
 				<right>5</right>
 				<top>0</top>
-				<bottom>0</bottom>
+				<bottom>105</bottom>
 				<texture colordiffuse="Color-Overlay-Secondary">colors/color_white.png</texture>
 
 				<animation effect="fade" start="100" end="0" time="400" delay="200" tween="cubic" easing="inout" reversible="true">Focus</animation>
+
+			</control>
+
+			<control type="textbox">
+
+				<left>5</left>
+				<right>5</right>
+				<top>200</top>
+				<bottom>10</bottom>
+				<label>[B]$INFO[ListItem.Label][/B][CR]as $INFO[ListItem.Label2]</label>
+				<font>Font-Caption</font>
+				<textcolor>Color-Light-Tertiary</textcolor>
+				<aligny>top</aligny>
+				<wrapmultiline>true</wrapmultiline>
 
 			</control>
 

@@ -2,8 +2,10 @@
 
 <includes>
 
+	<include file="Defaults.xml" />
 	<include file="Variable.xml" />
 
+	<include file="Includes_Animation.xml" />
 	<include file="Includes_Breadcrumb.xml" />
 	<include file="Includes_Controls.xml" />
 	<include file="Includes_Home.xml" />

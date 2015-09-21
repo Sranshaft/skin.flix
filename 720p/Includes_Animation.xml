@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+
+	<include name="Animation-Control-SystemIdle-Fade">
+
+		<animation effect="fade" time="1000" delay="600" tween="cubic" easing="inout" start="0" end="100" reversible="true" condition="System.IdleTime(2)">Conditional</animation>
+
+		<animation effect="fade" time="100" tween="cubic" easing="inout" start="100" end="0" reversible="true" condition="!System.IdleTime(2)">Conditional</animation>
+
+	</include>
+
+	<include name="Animation-Control-SystemIdle-FadeOut">
+
+		<animation effect="fade" time="1000" delay="600" tween="cubic" easing="inout" start="0" end="100" reversible="true" condition="!System.IdleTime(10)">Conditional</animation>
+
+		<animation effect="fade" time="400" tween="cubic" easing="inout" start="100" end="0" reversible="true" condition="System.IdleTime(10)">Conditional</animation>
+
+	</include>
+
+	<include name="Animation-Control-VisibleChange-Fade">
+
+		<animation effect="fade" time="400" delay="400" tween="cubic" easing="inout" start="0" end="100" reversible="true">Visible</animation>
+
+		<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="0" reversible="true">Hidden</animation>
+
+	</include>
+
+	<include name="Animation-Control-WindowClose-Fade">
+
+		<animation effect="fade" time="400" tween="cubic" easing="inout" start="100" end="0" reversible="true">WindowClose</animation>
+
+	</include>
+
+	<include name="Animation-Control-WindowOpen-Fade">
+
+		<animation effect="fade" time="400" delay="800" tween="cubic" easing="inout" start="0" end="100" reversible="true">WindowOpen</animation>
+
+	</include>
+
+	<include name="Animation-Control-WindowClose-Slide">
+
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="400" delay="400" tween="cubic" easing="inout" reversible="false" />
+			<effect type="slide" start="0,0" end="0,200" time="400" delay="400" tween="cubic" easing="inout" reversible="false" />
+		</animation>
+
+	</include>
+
+	<include name="Animation-Control-WindowOpen-Slide">
+
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="400" delay="400" tween="cubic" easing="inout" reversible="false" />
+			<effect type="slide" start="0,200" end="0,0" time="400" delay="400" tween="cubic" easing="inout" reversible="false" />
+		</animation>
+
+	</include>
+
+</includes>

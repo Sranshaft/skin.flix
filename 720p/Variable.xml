@@ -2,6 +2,232 @@
 
 <includes>
 
+	<!--Breadcrumb Variables-->
+	
+	<variable name="Breadcrumb-Header">
+		
+		<!--Addon Windows-->
+
+		<value condition="SubString(Window.Property(xmlfile),script-Actors-DialogVideoInfo.xml)">$INFO[Listitem.Title]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-Actors-Browser.xml)">Image Browser</value>
+
+		<!--Labels : ExtendedInfo-->
+		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogInfo.xml)">$INFO[Window.Property(actor.Title)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script-ExtendedInfo Script-DialogVideoInfo.xml)">$INFO[Window.Property(movie.Title)]</value>
+
+		<!--Labels : Global Search-->
+		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-main.xml)">Global Search</value>
+		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-infodialog.xml)">$INFO[Container(100).ListItem.Label]</value>
+
+		<!--Labels : NextAired-->
+		<value condition="SubString(Window.Property(xmlfile),script-NextAired-TVGuide)">Next Aired TV Guide</value>
+
+		<!--Labels : PseudoTV-->
+		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.TVOverlay)">PseudoTV Live</value>
+		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.EPG.xml)">PseudoTV Live</value>
+
+		<!--Labels : The Big Picture-->
+		<value condition="SubString(Window.Property(xmlfile),script-The Big Picture-main)">The Big Picture</value>
+
+		<!--Labels : VideoExtras-->
+		<value condition="SubString(Window.Property(xmlfile),script-videoextras-main.xml)">$INFO[ListItem.Title]</value>
+
+		<!--Labels : Youtube-->
+		<value condition="SubString(Container.FolderPath,plugin://plugin.video.youtube,left)">Youtube</value>
+
+		<!--Core Windows-->
+
+		<value condition="StringCompare(Window.Property(xmlfile),AddonBrowser.xml)">$LOCALIZE[24001]</value>
+
+		<!--Labels : Hubs-->
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_LiveTV.xml)">Live TV</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">$LOCALIZE[31006]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">$LOCALIZE[31004]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">$LOCALIZE[20343]</value>
+
+		<!--Labels : In Progress-->
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_InProgress_Episodes.xml)">In Progress</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_InProgress_Movies.xml)">In Progress</value>
+
+		<!--Labels : Dialogs-->
+		<value condition="StringCompare(Window.Property(xmlfile),DialogAddonInfo.xml)">$INFO[ListItem.Property(Addon.Name)]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogAlbumInfo.xml) + Container.Content(artists)">$INFO[ListItem.Artist]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogAlbumInfo.xml) + Container.Content(albums)">$INFO[ListItem.Album]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogButtonMenu.xml)">Kodi</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogContentSettings.xml)">$LOCALIZE[20333]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogFavourites.xml)">$LOCALIZE[1036]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogFullScreenInfo.xml)">Kodi Video</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">Kodi Video</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">Kodi Music</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogSelect.xml)">$INFO[Control.GetLabel(1)]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsManager.xml)">Kodi TV</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsOSD.xml)">Kodi TV</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogVideoInfo.xml)">$INFO[ListItem.Title]</value>
+
+		<!--Labels : FileBrowser.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),FileBrowser.xml)">$INFO[Control.GetLabel(411)]</value>
+
+		<!--Labels : FileManager.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),FileManager.xml)">$LOCALIZE[7]</value>
+
+		<!--Labels : MusicOSD.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">Kodi Music</value>
+
+		<!--Labels : MusicVisualisation.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MusicVisualisation.xml)">Kodi Music</value>
+
+		<!--Labels : MyGames.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyGames.xml)">$LOCALIZE[15016]</value>
+		
+		<!--Labels : MyMusicNav.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml) + SubString(Container.FolderPath,musicdb://artists/,left) + Container.Content(songs)">$INFO[ListItem.Artist]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml) | StringCompare(Window.Property(xmlfile),MyMusicSongs.xml)">$LOCALIZE[2]</value>
+		
+		<!--Labels : MyMusicPlaylist.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyMusicPlaylist.xml)">$LOCALIZE[20011]</value>
+		
+		<!--Labels : MyPics.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyPics.xml)">$LOCALIZE[1]</value>
+
+		<!--Labels : MyPrograms.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyPrograms.xml)">$LOCALIZE[1043]</value>
+
+		<!--Labels : MyPVR.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml)">$LOCALIZE[31502]</value>
+
+		<!--Labels : MyVideoNav.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + SubString(Container.FolderPath,videodb://movies/,left)">$LOCALIZE[20342]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + SubString(Container.FolderPath,videodb://recentlyaddedmovies/,left)">$LOCALIZE[20342]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + SubString(Container.FolderPath,videodb://recentlyaddedepisodes/,left)">$LOCALIZE[20343]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + Container.Content(seasons)">$INFO[ListItem.TVShowTitle]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + Container.Content(episodes)">$INFO[ListItem.TVShowTitle]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + SubString(Container.FolderPath,videodb://tvshows/,left)">$LOCALIZE[20343]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml)">$LOCALIZE[10025]</value>
+		
+		<!--Labels : MyVideoNav.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoPlaylist.xml)">$LOCALIZE[20012]</value>
+
+		<!--Labels : MyVideoNav.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">Kodi Weather</value>
+
+		<!--Labels : Settings-->
+		<value condition="StringCompare(Window.Property(xmlfile),SettingsCategory.xml) | StringCompare(Window.Property(xmlfile),Custom_52_Skin_Settings.xml)">$LOCALIZE[5]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),SettingsSystemInfo.xml)">$LOCALIZE[130]</value>
+
+		<!--Labels : Slideshow.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),Slideshow.xml)">Kodi Pictures</value>
+
+		<!--Labels : SmartPlaylistEditor.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),SmartPlaylistEditor.xml)">$LOCALIZE[21432]</value>
+
+		<!--Labels : Video OSD-->
+		<value condition="StringCompare(Window.Property(xmlfile),VideoOSD.xml)">Kodi Video</value>
+		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDBookmarks.xml)">Kodi Video</value>
+		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDSettings.xml)">Kodi Video</value>
+
+		<!--Labels : VisualisationPresetList.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),VisualisationPresetList.xml)">Kodi Music</value>
+	</variable>
+	
+	<variable name="Breadcrumb-SubHeader">
+
+		<!--Addon Windows-->
+
+		<!--Labels : Global Search-->
+		<value condition="SubString(Window.Property(xmlfile),script-globalsearch-main)">$INFO[Control.GetLabel(190)]$INFO[Control.GetLabel(191)]</value>
+
+		<!--Labels : NextAired-->
+		<value condition="SubString(Window.Property(xmlfile),script-NextAired-TVGuide)">Coming episodes</value>
+
+		<!--Labels : PseudoTV-->
+		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.TVOverlay)">$INFO[Control.GetLabel(502)]</value>
+		<value condition="SubString(Window.Property(xmlfile),script.pseudotv.live.EPG)">EPG</value>
+
+		<!--Labels : The Big Picture-->
+		<value condition="SubString(Window.Property(xmlfile),script-The Big Picture-main)">$INFO[Container(100).ListItem.Property(album_title)]</value>
+
+		<!--Labels : VideoExtras-->
+		<value condition="SubString(Window.Property(xmlfile),script-videoextras-main.xml)">$ADDON[script.videoextras 32001]</value>
+
+		<!--Labels : Youtube-->
+		<value condition="StringCompare(Container.FolderPath,plugin://plugin.video.youtube/)">-</value>
+		<value condition="StringCompare(Container.FolderPath,plugin://plugin.video.youtube/special/new_uploaded_videos_tv/)">My subscriptions</value>
+		<value condition="StringCompare(Container.FolderPath,plugin://plugin.video.youtube/special/popular_right_now/)">Popular right now</value>
+		<value condition="StringCompare(Container.FolderPath,plugin://plugin.video.youtube/kodion/search/list/)">Search</value>
+		<value condition="StringCompare(Container.FolderPath,plugin://plugin.video.youtube/channel/mine/)">My channel</value>
+		<value condition="Substring(Container.FolderPath,plugin://plugin.video.youtube/channel/mine/,left)">Liked videos</value>
+		<value condition="StringCompare(Container.FolderPath,plugin://plugin.video.youtube/special/disliked_videos/)">Disliked videos</value>
+		<value condition="StringCompare(Container.FolderPath,plugin://plugin.video.youtube/channel/mine/playlists/)">Playlists</value>
+		<value condition="StringCompare(Container.FolderPath,plugin://plugin.video.youtube/subscriptions/list/)">Subscriptions</value>
+		<value condition="StringCompare(Container.FolderPath,plugin://plugin.video.youtube/special/browse_channels/)">Channels</value>
+		<value condition="StringCompare(Container.FolderPath,plugin://plugin.video.youtube/special/live/)">Live</value>
+
+		<!--Core Windows-->
+
+		<!--Labels : Hubs-->
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_LiveTV.xml)">Hub</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Movies.xml)">Hub</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_Music.xml)">Hub</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_Hub_TV.xml)">Hub</value>
+
+		<!--Labels : In Progress-->
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_InProgress_Episodes.xml)">Episodes</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Custom_InProgress_Movies.xml)">Movies</value>
+
+		<!--Labels : Dialogs-->
+		<value condition="StringCompare(Window.Property(xmlfile),DialogButtonMenu.xml)">Power Options</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogFullScreenInfo.xml)">Now watching</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasVideo">Now watching</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogSeekbar.xml) + Player.HasAudio">Now listening</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogSelect.xml)">$INFO[Container(6).NumItems,, items]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsManager.xml)">$LOCALIZE[19199]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),DialogPVRChannelsOSD.xml)">Channels</value>
+
+		<!--Labels : MusicOSD.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MusicOSD.xml)">Controls</value>
+
+		<!--Labels : MusicVisualisation.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MusicVisualisation.xml)">Now listening</value>
+
+		<!--Labels : MyGames.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyGames.xml)">$INFO[ListItem.FolderName]</value>
+
+		<!--Labels : MyMusicNav.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml) + SubString(Container.FolderPath,musicdb://artists/,left) + Container.Content(albums)">$INFO[ListItem.Artist]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml) + SubString(Container.FolderPath,musicdb://artists/,left) + Container.Content(songs)">$INFO[ListItem.Album]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyMusicNav.xml)">$INFO[Container.FolderName]</value>
+
+		<!--Labels : MyPics.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyPics.xml)">$INFO[Container.FolderName]</value>
+
+		<!--Labels : MyPVR.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(10)">EPG timeline</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(15)">EPG channel</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(16)">EPG now \ next</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(11)">TV channels</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(12)">Radio channels</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(13)">Recordings</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(14)">Timers</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyPVR.xml) + Control.IsVisible(17)">Search</value>
+
+		<!--Labels : MyVideoNav.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + SubString(Container.FolderPath,videodb://recentlyaddedmovies/,left)">$LOCALIZE[20386]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + SubString(Container.FolderPath,videodb://recentlyaddedepisodes/,left)">$LOCALIZE[20387]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + Container.Content(seasons)">Seasons</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + Container.Content(episodes)">$INFO[ListItem.Season,Season ,]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),MyVideoNav.xml) + !IsEmpty(Container.FolderPath)">$INFO[Container.FolderName]</value>
+
+		<!--Labels : MyWeather.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),MyWeather.xml)">$INFO[Weather.Location]</value>
+
+		<!--Labels : VideoOSD.xml-->
+		<value condition="StringCompare(Window.Property(xmlfile),VideoOSD.xml)">Controls</value>
+		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDBookmarks.xml)">Bookmarks</value>
+		<value condition="StringCompare(Window.Property(xmlfile),VideoOSDSettings.xml)">$INFO[Control.GetLabel(2)]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),VisualisationPresetList.xml)">$LOCALIZE[31032]</value>
+		<value condition="StringCompare(Window.Property(xmlfile),Slideshow.xml)">$INFO[ListItem.FolderPath]</value>
+	</variable>
+
 	<!--Accent Color Variables-->
 
 	<variable name="Color-Accent-Primary">
@@ -14,6 +240,12 @@
 		<value condition="SubString(Container.FolderPath,plugin://plugin.video.youtube,left">FFCF2420</value>
 		<value condition="SubString(Container.FolderPath,plugin://plugin.video.twitch,left">FF533A82</value>
 		<value>Color-Accent-Secondary</value>
+	</variable>
+
+	<variable name="Control-Wraplist-Image">
+		<value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="!IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value>$INFO[ListItem.Art(fanart)]</value>
 	</variable>
 
 	<!--Home Spotlight Variables-->
@@ -86,6 +318,50 @@
 		<value condition="Control.HasFocus(6550)">$INFO[Container(6550).ListItem.Title]</value>
 		<value condition="Control.HasFocus(6650)">$INFO[Container(6650).ListItem.Title]</value>
 		<value>$INFO[Container(5050).ListItem.Title]</value>
+	</variable>
+
+	<!--Now Playing Variables-->
+	
+	<variable name="NowPlaying-Label-Primary">
+		<value condition="Player.HasAudio">$INFO[MusicPlayer.Artist]</value>
+		<value condition="Player.HasVideo + VideoPlayer.HasMenu">$INFO[Player.Title]</value>
+		<value condition="Player.HasVideo + [VideoPlayer.Content(movies) | VideoPlayer.Content(files)]">$INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + IsEmpty(VideoPlayer.Season)">$INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + !IntegerGreaterThan(VideoPlayer.Season,9) + !IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,S0,]$INFO[VideoPlayer.Episode,E0,] $INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + !IntegerGreaterThan(VideoPlayer.Season,9) + IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,S0,]$INFO[VideoPlayer.Episode,E,] $INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + IntegerGreaterThan(VideoPlayer.Season,9) + !IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E0,] $INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes) + IntegerGreaterThan(VideoPlayer.Season,9) + IntegerGreaterThan(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E,] $INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Title]</value>
+		<value condition="Player.HasVideo">$INFO[VideoPlayer.PlaylistPosition,,.] $INFO[VideoPlayer.Title]</value>
+	</variable>
+	
+	<variable name="NowPlaying-Label-Secondary">
+		<value condition="Player.HasAudio">$INFO[MusicPlayer.Album]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(movies)">$INFO[VideoPlayer.Director]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TVShowTitle]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(files)">$INFO[VideoPlayer.Genre]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelName]</value>
+		<value condition="Player.HasVideo">$INFO[VideoPlayer.Studio]</value>
+	</variable>
+	
+	<variable name="NowPlaying-Label-Tertiary">
+		<value condition="Player.HasAudio">$INFO[MusicPlayer.Title]</value>
+		<value condition="Player.HasVideo + VideoPlayer.HasMenu">Chapter $INFO[Player.Chapter] of $INFO[Player.ChapterCount]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(movies) + !IsEmpty(VideoPlayer.Year)">[B]$INFO[VideoPlayer.Year][/B] $INFO[VideoPlayer.Studio]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(movies) + IsEmpty(VideoPlayer.Year)">$INFO[VideoPlayer.Studio]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TVShowTitle]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.StartTime] - $INFO[VideoPlayer.EndTime]</value>
+	</variable>
+	
+	<variable name="NowPlaying-Thumbnail">
+		<value condition="Player.HasAudio">$INFO[MusicPlayer.Cover]</value>
+		<value condition="Player.HasVideo + VideoPlayer.HasMenu">nowplaying/tile/nowplaying_dvd.png</value>
+		<value condition="Player.HasVideo + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(livetv)">$INFO[Player.Art(thumb)]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(files) + !IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(files) + !IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
+		<value condition="Player.HasVideo + VideoPlayer.Content(files)">nowplaying/tile/nowplaying_file.png</value>
+		<value>$INFO[Player.Art(thumb)]</value>
 	</variable>
 
 </includes>

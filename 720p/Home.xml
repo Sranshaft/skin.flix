@@ -11,158 +11,34 @@
 
 		<control type="group">
 
-			<left>0</left>
-			<right>0</right>
-			<top>0</top>
-			<bottom>0</bottom>
-
+			<include>Common-Dimensions</include>
 			<include>Common-Breadcrumb</include>
 
 			<control type="group" id="5000">
 
-				<left>0</left>
-				<right>0</right>
-				<top>60</top>
-				<height>430</height>
+				<include>Common-Spotlight-Group</include>
+				
+				<include name="Common-Spotlight-Background">
 
-				<control type="wraplist" id="5050">
-
-					<left>350</left>
-					<right>0</right>
-					<top>0</top>
-					<bottom>0</bottom>
-					<viewtype label="535">panel</viewtype>
-					<scrolltime tween="cubic" easing="inout">400</scrolltime>
-					<orientation>horizontal</orientation>
-					<preloaditems>2</preloaditems>
-					<focusposition>1</focusposition>
-					<ondown>6050</ondown>
-
-					<visible allowhiddenfocus="true">false</visible>
-
-					<itemlayout width="930" height="430">
-
-					</itemlayout>
-
-					<focusedlayout width="930" height="430">
-
-					</focusedlayout>
-
-					<content target="video">special://skin/playlists/In Progress (TV Shows).xsp</content>
-
-				</control>
-
-				<control type="image">
-
-					<left>350</left>
-					<right>0</right>
-					<top>0</top>
-					<bottom>0</bottom>
-					<texture align="center" aligny="top" background="true">$VAR[Home-Spotlight-Fanart]</texture>
-					<aspectratio align="center" aligny="top">scale</aspectratio>
-					<fadetime>400</fadetime>
-
-					<animation effect="fade" time="600" delay="200" tween="cubic" easing="inout" start="0" end="100" reversible="true">WindowOpen</animation>
-
-				</control>
-
-				<control type="image">
-
-					<left>0</left>
-					<right>0</right>
-					<top>0</top>
-					<bottom>-1</bottom>
-					<texture>background/background_shadowbox.png</texture>
-					
-				</control>
+					<param name="content">special://skin/playlists/In Progress (TV Shows).xsp</param>
+					<param name="fanart">$VAR[Home-Spotlight-Fanart]</param>
+				
+				</include>
 
 				<control type="grouplist">
 
-					<left>95</left>
-					<width>490</width>
-					<top>50</top>
-					<bottom>0</bottom>
-					<orientation>vertical</orientation>
-					<aligny>top</aligny>
-					<itemgap>16</itemgap>
-					<usecontrolcoords>true</usecontrolcoords>
+					<include>Common-Spotlight-Grouplist</include>
 
-					<animation effect="fade" time="600" tween="cubic" easing="inout" start="0" end="100" reversible="true">WindowOpen</animation>
+					<include name="Common-Spotlight-Information">
 
-					<control type="textbox">
+						<param name="title">$VAR[Home-Spotlight-Title]</param>
+						<param name="rating">$VAR[Home-Spotlight-Rating]</param>
+						<param name="mpaa">$VAR[Home-Spotlight-MPAA]</param>
+						<param name="duration">$VAR[Home-Spotlight-Duration]</param>
+						<param name="plot">$VAR[Home-Spotlight-Plot]</param>
+					
+					</include>
 
-						<left>0</left>
-						<right>0</right>
-						<height min="0" max="200">auto</height>
-						<label>$VAR[Home-Spotlight-Title]</label>
-						<font>Font-Spotlight</font>
-						<textcolor>Color-Light-Primary</textcolor>
-
-					</control>
-
-					<control type="grouplist">
-
-						<left>0</left>
-						<top>-10</top>
-						<width>490</width>
-						<height>24</height>
-						<orientation>horizontal</orientation>
-						<itemgap>10</itemgap>
-						<usecontrolcoords>true</usecontrolcoords>
-
-						<control type="image">
-
-							<top>4</top>
-							<width>120</width>
-							<height>20</height>
-							<texture background="true" colordiffuse="Color-Accent-Primary">rating4.png</texture>
-							<aspectratio align="left" aligny="center">scale</aspectratio>
-							
-						</control>
-						
-						<control type="label">
-
-							<width min="0" max="200">auto</width>
-							<height>24</height>
-							<label>$VAR[Home-Spotlight-Rating]</label>
-							<font>Font-Caption</font>
-							<textcolor>Color-Light-Tertiary</textcolor>
-
-						</control>
-
-						<control type="label">
-
-							<width min="0" max="200">auto</width>
-							<height>24</height>
-							<label>$VAR[Home-Spotlight-MPAA]</label>
-							<font>Font-Caption</font>
-							<textcolor>Color-Light-Tertiary</textcolor>
-
-						</control>
-
-						<control type="label">
-
-							<width min="0" max="200">auto</width>
-							<height>24</height>
-							<label>$VAR[Home-Spotlight-Duration]</label>
-							<font>Font-Caption</font>
-							<textcolor>Color-Light-Tertiary</textcolor>
-
-						</control>
-
-					</control>
-
-					<control type="textbox">
-
-						<left>0</left>
-						<right>0</right>
-						<height min="0" max="135">auto</height>
-						<label>$VAR[Home-Spotlight-Plot]</label>
-						<font>Font-Body</font>
-						<textcolor>Color-Light-Tertiary</textcolor>
-
-					</control>
-				
 				</control>
 
 			</control>
@@ -178,10 +54,8 @@
 				<itemgap>10</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 
-				<animation type="WindowOpen">
-					<effect type="fade" start="0" end="100" time="600" delay="1000" tween="cubic" easing="inout" reversible="false" />
-					<effect type="slide" start="0,200" end="0,0" time="600" delay="1000" tween="cubic" easing="inout" reversible="false" />
-				</animation>
+				<include>Animation-Control-WindowOpen-Slide</include>
+				<include>Animation-Control-WindowClose-Slide</include>
 
 				<control type="group" id="6000">
 
@@ -208,6 +82,7 @@
 								<description>Now Playing</description>
 								<label>Now playing</label>
 								<label2>$VAR[NowPlaying-Label-Primary]</label2>
+								<icon>home/home_nowplaying.png</icon>
 								<property name="Fanart">$VAR[NowPlaying-Thumbnail]</property>
 								<onclick>ActivateWindow(fullscreenvideo)</onclick>
 								<visible>Player.HasVideo</visible>
@@ -217,6 +92,7 @@
 								<description>Now Playing</description>
 								<label>Now playing</label>
 								<label2>$INFO[MusicPlayer.Title][CR]$INFO[MusicPlayer.Album]</label2>
+								<icon>home/home_nowplaying.png</icon>
 								<property name="Fanart">$VAR[NowPlaying-Thumbnail]</property>
 								<onclick>ActivateWindow(visualisation)</onclick>
 								<visible>Player.HasAudio</visible>
@@ -244,7 +120,8 @@
 								<label2>$INFO[Window(Home).Property(Movies.Count),, movies][CR]$INFO[Window(Home).Property(Movies.Watched),, watched][CR]$INFO[Window(Home).Property(Movies.UnWatched),, unwatched]</label2>
 								<icon>home/home_movie_small.png</icon>
 								<property name="Fanart">$INFO[Window(Home).Property(script.grab.fanart.Movie.Fanart)]</property>
-								<onclick>ActivateWindow(1110,return)</onclick>
+								<!-- <onclick>ActivateWindow(1110,return)</onclick> -->
+								<onclick>ActivateWindow(videos,movietitles,return)</onclick>
 								<!-- <visible>Library.HasContent(movies) + Skin.HasSetting(ShowMoviesMenu)</visible> -->
 							</item>
 
@@ -511,72 +388,14 @@
 
 			</control>
 
-			<control type="group">
+			<include name="Common-Indicator">
 
-				<left>0</left>
-				<right>0</right>
-				<top>400</top>
-				<bottom>0</bottom>
+				<param name="group-visible">true</param>
+				<param name="control-visible">!Control.HasFocus(5050) + !Control.HasFocus(6050)</param>
 
-				<animation type="WindowOpen">
-					<effect type="fade" start="0" end="100" time="600" delay="1600" tween="cubic" easing="inout" reversible="false" />
-				</animation>
+			</include>
 
-				<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="0" reversible="true">Hidden</animation>
-
-				<animation effect="fade" time="600" delay="1600" tween="cubic" easing="inout" start="0" end="100" reversible="true">Visible</animation>
-
-				<visible>!Control.HasFocus(5050)</visible>
-
-				<control type="image">
-
-					<left>95</left>
-					<top>35</top>
-					<width>250</width>
-					<height>140</height>
-					<texture border="10" colordiffuse="Color-Accent-Primary">list_focus.png</texture>
-
-				</control>
-
-				<control type="button">
-					
-					<left>10</left>
-					<top>75</top>
-					<include>Common-Arrow-Left</include>
-
-					<animation effect="fade" time="600" delay="600" tween="cubic" easing="inout" start="0" end="100" reversible="true" condition="System.IdleTime(2)">Conditional</animation>
-					
-				</control>
-
-				<control type="button">
-					
-					<right>10</right>
-					<top>75</top>
-					<include>Common-Arrow-Right</include>
-
-					<animation effect="fade" time="600" delay="600" tween="cubic" easing="inout" start="0" end="100" reversible="true" condition="System.IdleTime(2)">Conditional</animation>
-					
-				</control>
-
-				<control type="label">
-
-					<left>95</left>
-					<top>35</top>
-					<width>250</width>
-					<height>140</height>
-					<label></label>
-					<font>Font-Symbol-Button</font>
-					<textcolor>Color-Light-Primary</textcolor>
-					<align>center</align>
-					<aligny>center</aligny>
-
-					<visible>!Control.HasFocus(6050)</visible>
-
-					<animation effect="fade" time="600" delay="600" tween="cubic" easing="inout" start="0" end="100" reversible="true" condition="System.IdleTime(2)">Conditional</animation>
-
-				</control>
-
-			</control>
+			<include>Common-VideoWindow</include>
 
 		</control>		
 

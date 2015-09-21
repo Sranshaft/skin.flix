@@ -4,6 +4,51 @@
 
 	<controls>
 
+		<control type="grouplist">
+
+			<left>10</left>
+			<right>10</right>
+			<top>10</top>
+			<bottom>10</bottom>
+			<orientation>vertical</orientation>
+			<itemgap>10</itemgap>
+
+			<include>Animation-Control-VisibleChange-Fade</include>
+
+			<visible>Player.ShowCodec | Player.ShowTime</visible>
+
+			<control type="label" id="10">
+
+				<left>0</left>
+				<right>0</right>
+				<height min="0" max="200">auto</height>
+				<font>Font-Caption</font>
+				<textcolor>Color-Light-Primary</textcolor>
+
+			</control>
+
+			<control type="label" id="11">
+
+				<left>0</left>
+				<right>0</right>
+				<height min="0" max="200">auto</height>
+				<font>Font-Caption</font>
+				<textcolor>Color-Light-Primary</textcolor>
+
+			</control>
+
+			<control type="label" id="12">
+
+				<left>0</left>
+				<right>0</right>
+				<height min="0" max="200">auto</height>
+				<font>Font-Caption</font>
+				<textcolor>Color-Light-Primary</textcolor>
+
+			</control>
+
+		</control>
+
 	</controls>
 
 </window>

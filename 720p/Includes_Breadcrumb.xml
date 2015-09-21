@@ -87,7 +87,7 @@
 				<control type="button">
 					
 					<include>Common-Breadcrumb-Button</include>
-					<label></label>
+					<label></label>
 					<onclick>back</onclick>
 					
 					<visible>!Window.IsActive(home)</visible>
@@ -152,7 +152,7 @@
 				<control type="button">
 					
 					<include>Common-Breadcrumb-Button</include>
-					<label></label>
+					<label></label>
 					<onclick>CancelAlarm(ShutdownTimer)</onclick>
 
 					<visible>System.HasAlarm(ShutdownTimer)</visible>
@@ -163,7 +163,7 @@
 				<control type="button">
 					
 					<include>Common-Breadcrumb-Button</include>
-					<label></label>
+					<label></label>
 					<onclick>Action(play)</onclick>
 
 					<visible>Player.HasMedia + Player.Paused</visible>
@@ -174,7 +174,7 @@
 				<control type="button">
 					
 					<include>Common-Breadcrumb-Button</include>
-					<label></label>
+					<label></label>
 					<onclick>Action(pause)</onclick>
 
 					<visible>Player.HasMedia + Player.Playing</visible>
@@ -185,7 +185,7 @@
 				<control type="button">
 					
 					<include>Common-Breadcrumb-Button</include>
-					<label></label>
+					<label></label>
 					
 					<visible>Library.IsScanningMusic | Library.IsScanningVideo</visible>
 
@@ -195,7 +195,7 @@
 				<control type="button">
 					
 					<include>Common-Breadcrumb-Button</include>
-					<label></label>
+					<label></label>
 					<onclick>ActivateWindow(shutdownmenu)</onclick>
 
 				</control>
@@ -236,8 +236,8 @@
 				<control type="button">
 					
 					<include>Common-Breadcrumb-Button</include>
-					<label></label>
-					<altlabel></altlabel>
+					<label></label>
+					<altlabel></altlabel>
 					
 				</control>
 				
@@ -255,7 +255,7 @@
 		<height>60</height>
 		<texturefocus colordiffuse="Color-Dark-Secondary">colors/color_white.png</texturefocus>
 		<texturenofocus colordiffuse="Color-Dark-Primary">colors/color_white.png</texturenofocus>
-		<font>Font-Symbol-Button</font>
+		<font>Font-Symbol-Button-Normal</font>
 		<textcolor>Color-Light-Primary</textcolor>
 		<focusedcolor>Color-Light-Primary</focusedcolor>
 		<textoffsetx>0</textoffsetx>

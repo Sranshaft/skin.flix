@@ -2,7 +2,98 @@
 
 <window id="25">
 
+	<defaultcontrol>6050</defaultcontrol>
+	<views>6050</views>
+
 	<controls>
+
+		<control type="group">
+
+			<include>Common-Dimensions</include>
+			<include>Common-Breadcrumb</include>
+
+			<control type="group" id="5000">
+
+				<include>Common-Spotlight-Group</include>
+
+				<include name="Common-Spotlight-Background">
+
+					<param name="content">-</param>
+					<param name="fanart">$INFO[Container(6050).ListItem.Art(fanart)]</param>
+				
+				</include>
+
+				<control type="grouplist">
+
+					<include>Common-Spotlight-Grouplist</include>
+
+					<animation effect="fade" time="400" delay="2000" tween="cubic" easing="inout" start="100" end="0" reversible="true" condition="Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
+
+					<animation effect="fade" time="400" tween="cubic" easing="inout" start="0" end="100" reversible="true">Visible</animation>
+
+					<include name="Common-Spotlight-Information">
+
+						<param name="title">$INFO[Container(6050).ListItem.Label]</param>
+						<param name="rating">$INFO[Container(6050).ListItem.Rating]</param>
+						<param name="mpaa">$INFO[Container(6050).ListItem.MPAA]</param>
+						<param name="duration">$INFO[Container(6050).ListItem.Duration,, minutes]</param>
+						<param name="plot">$INFO[Container(6050).ListItem.Plot]</param>
+					
+					</include>
+
+				</control>
+
+			</control>
+
+			<control type="grouplist">
+
+				<left>0</left>
+				<right>0</right>
+				<top>400</top>
+				<bottom>0</bottom>
+				<orientation>vertical</orientation>
+				<scrolltime tween="cubic" easing="inout">400</scrolltime>
+				<itemgap>10</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+
+				<animation effect="slide" time="400" delay="400" tween="cubic" easing="inout" start="0,0" end="0,320" reversible="true" condition="Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
+
+				<include>Animation-Control-WindowOpen-Slide</include>
+				<include>Animation-Control-WindowClose-Slide</include>
+
+				<control type="group" id="6000">
+
+					<include>Common-Group</include>
+
+					<animation effect="fade" time="200" tween="cubic" easing="inout" start="100" end="30" reversible="true" condition="!Control.HasFocus(6050)">Conditional</animation>
+
+					<control type="label" id="6010">
+
+						<include>Common-Label</include>
+						<label>My library...</label>
+
+					</control>	
+
+					<control type="wraplist" id="6050">
+
+						<include>Common-Wraplist-Fanart</include>
+
+					</control>
+
+				</control>
+
+			</control>
+
+			<include name="Common-Indicator">
+
+				<param name="group-visible">!Window.IsVisible(DialogVideoInfo.xml)</param>
+				<param name="control-visible">!Control.HasFocus(5050) + !Window.IsVisible(DialogVideoInfo.xml)</param>
+
+			</include>
+
+			<include>Common-VideoWindow</include>
+
+		</control>		
 
 	</controls>
 
